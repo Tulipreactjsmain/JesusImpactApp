@@ -135,7 +135,7 @@ class _SignInViewState extends ConsumerState<SignInView> {
                   ),
                 ).alignCenterRight(),
                 51.sbH,
-                isLoading.value
+                isAuthLoading
                     ? SizedBox(
                         height: 50.h,
                         child: const Center(
@@ -146,42 +146,42 @@ class _SignInViewState extends ConsumerState<SignInView> {
                     : ArrowButton(
                         width: 154.w,
                         onTap: () {
-                          setState(() {
-                            load();
-                          });
-                          // ref.read(authControllerProvider.notifier).loginUser(
-                          //       context: context,
-                          //       email: _usernameController.text,
-                          //       password: _passwordController.text,
-                          //     );
+                          // setState(() {
+                          //   load();
+                          // });
+                          ref.read(authControllerProvider.notifier).loginUser(
+                                context: context,
+                                email: _usernameController.text,
+                                password: _passwordController.text,
+                              );
                         },
                         text: 'Sign in',
                       ).alignCenterLeft(),
                 144.sbH,
 
-                SizedBox(
-                  width: 197.w,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: List.generate(
-                      3,
-                      (index) => CircleAvatar(
-                        backgroundColor: Pallete.textInputFillGreyEE,
-                        child: Container(
-                            padding: const EdgeInsets.all(9),
-                            child: switch (index) {
-                              0 => Image.network(
-                                  "https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png"),
-                              1 => Image.network(
-                                  "https://cdn.icon-icons.com/icons2/1826/PNG/512/4202107facebookfblogosocialsocialmedia-115710_115591.png"),
-                              2 => Image.network(
-                                  "https://img.freepik.com/free-icon/twitter_318-674515.jpg"),
-                              _ => null
-                            }),
-                      ),
-                    ),
-                  ),
-                ).alignCenterLeft(),
+                // SizedBox(
+                //   width: 197.w,
+                //   child: Row(
+                //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //     children: List.generate(
+                //       3,
+                //       (index) => CircleAvatar(
+                //         backgroundColor: Pallete.textInputFillGreyEE,
+                //         child: Container(
+                //             padding: const EdgeInsets.all(9),
+                //             child: switch (index) {
+                //               0 => Image.network(
+                //                   "https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png"),
+                //               1 => Image.network(
+                //                   "https://cdn.icon-icons.com/icons2/1826/PNG/512/4202107facebookfblogosocialsocialmedia-115710_115591.png"),
+                //               2 => Image.network(
+                //                   "https://img.freepik.com/free-icon/twitter_318-674515.jpg"),
+                //               _ => null
+                //             }),
+                //       ),
+                //     ),
+                //   ),
+                // ).alignCenterLeft(),
 
                 30.sbH,
                 RichText(

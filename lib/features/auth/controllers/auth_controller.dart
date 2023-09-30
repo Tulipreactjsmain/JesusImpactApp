@@ -74,9 +74,7 @@ class AuthController extends StateNotifier<bool> {
         theType: NotificationType.failure,
       ),
       (bool user) {
-        // _ref.read(userProvider.notifier).update((state) => user);
         onTap!.call();
-        // goTo(context, const LegalTermsView());
       },
     );
   }
@@ -100,12 +98,8 @@ class AuthController extends StateNotifier<bool> {
         theMessage: l.message,
         theType: NotificationType.failure,
       ),
-      (UserModel user) {
-        _ref.read(userProvider.notifier).update((state) => user);
-        //! update time for auth rotation
-        // _ref.read(authRotationControllerProvider.notifier).countTime();
-
-        // user.firstName!.log();
+      (String result) {
+        result.log();
         goTo(
           view: const BaseNavWrapper(),
           context: context,
@@ -113,174 +107,6 @@ class AuthController extends StateNotifier<bool> {
       },
     );
   }
-
-  // //! send sms otp
-  // Future<void> sendSMSOTP({
-  //   required BuildContext context,
-  //   required String phoneNumber,
-  // }) async {
-  //   state = true;
-  //   final response = await _authRepository.sendSMSOTP(
-  //     phoneNumber: phoneNumber,
-  //   );
-
-  //   state = false;
-  //   response.fold(
-  //     (Failure l) => showBanner(
-  //       context: context,
-  //       theMessage: l.message,
-  //       theType: NotificationType.failure,
-  //     ),
-  //     (String successMessage) {
-  //       goTo(
-  //         context,
-  //         VerificationView(
-  //           phoneNUmber: phoneNumber,
-  //         ),
-  //       );
-  //     },
-  //   );
-  // }
-
-  // //! verify sms otp
-  // Future<void> verifySMSOTP({
-  //   required BuildContext context,
-  //   required String phoneNumber,
-  //   required String oTP,
-  //   required void Function()? onTap,
-  // }) async {
-  //   state = true;
-  //   final response = await _authRepository.verifySMSOTP(
-  //     phoneNumber: phoneNumber,
-  //     oTP: oTP,
-  //   );
-
-  //   state = false;
-  //   response.fold(
-  //     (Failure l) => showBanner(
-  //       context: context,
-  //       theMessage: l.message,
-  //       theType: NotificationType.failure,
-  //     ),
-  //     (String successMessage) async {
-  //       UserModel? user = _ref.read(userProvider);
-  //       user!.firstName!.toString().log();
-  //       user = user.copyWith(
-  //         phoneNumber: phoneNumber,
-  //         verifiedPhone: true,
-  //       );
-  //       // ErrorModel? errorModel;
-
-  //       // print(user.lastName!.toString());
-
-  //       // errorModel = await _ref.read(authRepositoryProvider).getUserData();
-
-  //       // _ref.read(userProvider.notifier).update((state) => errorModel!.data);
-
-  //       await _ref.read(profileControllerProvider.notifier).updateUserInfo(
-  //             context: context,
-  //             user: user,
-  //           );
-
-  //       'otp success'.log();
-
-  //       // showBanner(
-  //       //   context: context,
-  //       //   theMessage: successMessage,
-  //       //   theType: NotificationType.success,
-  //       // );
-  //       onTap!.call();
-  //     },
-  //   );
-  // }
-
-  // //! send email otp
-  // Future<void> sendEmailOTP({
-  //   required BuildContext context,
-  //   required String email,
-  // }) async {
-  //   state = true;
-  //   final response = await _authRepository.sendEmailOTP(
-  //     email: email,
-  //   );
-
-  //   state = false;
-  //   response.fold(
-  //     (Failure l) => showBanner(
-  //       context: context,
-  //       theMessage: l.message,
-  //       theType: NotificationType.failure,
-  //     ),
-  //     (String successMessage) {
-  //       goTo(
-  //         context,
-  //         EmailOTPView(email: email),
-  //       );
-  //       showBanner(
-  //         context: context,
-  //         theMessage: successMessage.toTitleCase(),
-  //         theType: NotificationType.info,
-  //       );
-  //     },
-  //   );
-  // }
-
-  // //! verify email otp
-  // Future<void> verifyEmailOTP({
-  //   required BuildContext context,
-  //   required String email,
-  //   required String oTP,
-  // }) async {
-  //   state = true;
-  //   final response = await _authRepository.verifyEmailOTP(
-  //     email: email,
-  //     oTP: oTP,
-  //   );
-
-  //   state = false;
-  //   response.fold(
-  //     (Failure l) => showBanner(
-  //       context: context,
-  //       theMessage: l.message,
-  //       theType: NotificationType.failure,
-  //     ),
-  //     (String token) async {
-  //       goTo(
-  //         context,
-  //         PasswordSettingsView(token: token),
-  //       );
-  //     },
-  //   );
-  // }
-
-  // //! chnage password
-  // Future<void> changePassword({
-  //   required BuildContext context,
-  //   required String password,
-  //   required String token,
-  // }) async {
-  //   state = true;
-  //   final response = await _authRepository.changePassword(
-  //     password: password,
-  //     token: token,
-  //   );
-
-  //   state = false;
-  //   response.fold(
-  //     (Failure l) {
-  //       goTo(
-  //         context,
-  //         PasswordFailureView(messsage: l.message),
-  //       );
-  //     },
-  //     (String token) {
-  //       goTo(
-  //         context,
-  //         const PasswordUpdateSuccessView(),
-  //       );
-  //     },
-  //   );
-  // }
 
   // //! get user data
   // Future<void> getUserData({required BuildContext context}) async {

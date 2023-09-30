@@ -1,6 +1,7 @@
 //! THIS FILE CONTAINS HOPEFULLY, ALL EXTENSIONS USED IN THE APP.
 import "dart:developer" as dev_tools show log;
 import "dart:io";
+import "package:flutter/foundation.dart";
 import "package:flutter/material.dart";
 import "package:flutter_animate/flutter_animate.dart";
 import "package:flutter_screenutil/flutter_screenutil.dart";
@@ -11,7 +12,11 @@ import "package:jimpact/theme/palette.dart";
 
 //! LOG EXTENSION - THIS HELPS TO CALL A .log() ON ANY OBJECT
 extension Log on Object {
-  void log() => dev_tools.log(toString());
+  void log() {
+    if (kDebugMode) {
+      print(toString());
+    }
+  }
 }
 
 //! HELPS TO CALL A .dismissKeyboard ON A WIDGET

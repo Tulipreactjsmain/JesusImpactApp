@@ -299,7 +299,7 @@ class _CreateAccountViewState extends ConsumerState<CreateAccountView> {
           PopUpOverLayWidget(
             overlay: overlay,
             onButtonTap: () {
-              goTo(context: context, view: const InterestsSelectionView());
+              goTo(context: context, view: const SignInView());
             },
           ),
       ],

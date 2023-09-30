@@ -1,7 +1,9 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:jimpact/cache/token_cache.dart';
+import 'package:jimpact/features/auth/controllers/auth_controller.dart';
 import 'package:jimpact/models/tokens/token_model.dart';
 import 'package:jimpact/models/user/user_model.dart';
 
@@ -14,7 +16,10 @@ import 'package:fpdart/fpdart.dart';
 import 'package:http/http.dart' as http;
 
 class AuthRepository {
-  const AuthRepository();
+  final Ref _ref;
+  const AuthRepository({required Ref ref})
+      : _ref = ref,
+        super();
 
   //! sign up user
   FutureEither<bool> signUpUser({
@@ -107,7 +112,7 @@ class AuthRepository {
   }
 
   //! log in user
-  FutureEither<UserModel> loginUser({
+  FutureEither<String> loginUser({
     required String email,
     required String password,
   }) async {
@@ -141,14 +146,6 @@ class AuthRepository {
       switch (response.statusCode) {
         //! SERVER REQUEST WAS SUCCESSFUL
         case 200:
-          //! CONVERT DATA TO MODEL
-          UserModel registeredUser = const UserModel(
-              // userName: responseInMap['username'],
-              // firstName: responseInMap['first_name'],
-              // lastName: responseInMap['last_name'],
-              // email: responseInMap['email'],
-              );
-
           //! CACHE ACCESS TOKEN
           await TokenCache.cacheUserTokens(
             tokens: UserToken(
@@ -158,10 +155,9 @@ class AuthRepository {
           );
 
           //! CACHE USER DETAILS
-          // await UserDetailsCache.cacheUserDetails(
-          //     theUserDetails: registeredUser);
+          await getUserData();
 
-          return right(registeredUser);
+          return right('Login successful');
 
         //! ACCOUNT ALREADY EXISTS
         case 400:
@@ -246,7 +242,7 @@ class AuthRepository {
   }
 
   //! get user data
-  FutureEither<UserModel> getUserData() async {
+  Future<void> getUserData() async {
     try {
       //! FETCH USER TOKEN
       final Iterable<UserToken?> userToken = await TokenCache.getUserTokens();
@@ -271,36 +267,32 @@ class AuthRepository {
 
       switch (response.statusCode) {
         //! SERVER REQUEST WAS SUCCESSFUL
-        case 200:
+        case 200 || 201:
           //! CONVERT DATA TO MODEL
-          UserModel user = UserModel.fromJSON(responseInMap["data"]);
+          UserModel registeredUser = UserModel.fromJSON(responseInMap);
 
-          return right(user);
+          //! UPDATE USER DATA STATE
+          _ref.read(userProvider.notifier).update((state) => registeredUser);
+
+          'user details set'.log();
 
         //! SERVER REQUEST FAILED
         case 400:
-          "Sign Up Response Failure: $responseStream".log();
-          //! RETURN THE FAILURE, SHOW THE MESSAGE USING SHORTCUT LEFT.
-          return left(Failure(responseInMap["message"]));
+          "GET user details Response Failure: $responseStream".log();
 
         //! ANY OTHER FAILURE TYPE
         default:
-          "Default Sign Up Error Code: ${response.statusCode} \nResponse: $responseStream, \nReason: ${response.reasonPhrase}"
+          "Default GET user details Error Code: ${response.statusCode} \nResponse: $responseStream, \nReason: ${response.reasonPhrase}"
               .log();
-          return left(Failure(responseInMap["message"]));
       }
     } on SocketException catch (error) {
       "Socket Exception ${error.message.toString()}".log();
-      return left(Failure(NetworkErrors.socketException));
     } on FormatException catch (error) {
       "Format Exception ${error.message.toString()}".log();
-      return left(Failure(NetworkErrors.formatException));
     } on HttpException catch (error) {
       "Http Exception ${error.message.toString()}".log();
-      return left(Failure(NetworkErrors.httpException));
     } catch (error) {
-      "GET USER DATA Error ${error.toString()}".log();
-      return left(Failure(NetworkErrors.defaultException));
+      "GET user details default Error ${error.toString()}".log();
     }
   }
 

@@ -22,7 +22,7 @@ abstract class AppUrls {
   // static const String resetPassword = '$_authBaseUrl/verify/sms/check';
 
   //! profile
-  static const String getUserData = '$_driverBaseUrl/dashboard';
+  static const String getUserData = '$_baseUrl/profile/';
   static const String updateUserInfo = '$_driverBaseUrl/dashboard/details';
 
   //! campaign

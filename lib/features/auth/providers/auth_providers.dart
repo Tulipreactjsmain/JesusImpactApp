@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 //! the auth repo provider
 final Provider<AuthRepository> authRepositoryProvider =
-    Provider((ref) => const AuthRepository());
+    Provider((ref) => AuthRepository(ref: ref));
 
 //! the auth controller provider
 final authControllerProvider = StateNotifierProvider<AuthController, bool>(
