@@ -16,7 +16,6 @@ import 'package:jimpact/utils/nav.dart';
 import 'package:jimpact/utils/widgets/button.dart';
 import 'package:jimpact/utils/widgets/myicon.dart';
 import 'package:jimpact/utils/widgets/text_input.dart';
-import 'package:simple_notifier/simple_notifier.dart';
 
 class SignInView extends ConsumerStatefulWidget {
   const SignInView({super.key});
@@ -99,7 +98,7 @@ class _SignInViewState extends ConsumerState<SignInView> {
                 34.sbH,
 
                 //! password
-                isPasswordInvisible.listen(
+                isPasswordInvisible.sync(
                   builder: (context, value, child) => TextInputWidget(
                     hintText: AppTexts.password,
                     controller: _passwordController,

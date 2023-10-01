@@ -14,7 +14,6 @@ import 'package:jimpact/utils/widgets/button.dart';
 import 'package:jimpact/utils/widgets/myicon.dart';
 import 'package:jimpact/utils/widgets/text_input.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
-import 'package:simple_notifier/simple_notifier.dart';
 
 class EditProfileView extends ConsumerStatefulWidget {
   const EditProfileView({super.key});
@@ -77,7 +76,7 @@ class _EditProfileViewState extends ConsumerState<EditProfileView> {
             child: Column(
               children: [
                 35.sbH,
-                image.listen(
+                image.sync(
                   builder: (context, value, child) => Container(
                     height: 117.h,
                     width: 117.h,
@@ -138,7 +137,7 @@ class _EditProfileViewState extends ConsumerState<EditProfileView> {
                 34.sbH,
 
                 //! password
-                isPasswordInvisible.listen(
+                isPasswordInvisible.sync(
                   builder: (context, value, child) => TextInputWidget(
                     hintText: AppTexts.password,
                     controller: _passwordController,

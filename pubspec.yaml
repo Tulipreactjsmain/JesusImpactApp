@@ -45,11 +45,10 @@ dependencies:
   substring_highlight: ^1.0.33
   local_hero: ^0.2.0
   dropdown_button2: ^1.9.2
-  skeletonizer: ^0.2.0
+  skeletonizer: ^0.8.0
   camera: ^0.10.5+2
   flutter_image_compress: ^2.0.3
   google_fonts: ^5.1.0
-  simple_notifier: ^1.0.2
 
 dev_dependencies:
   flutter_launcher_icons: ^0.12.0

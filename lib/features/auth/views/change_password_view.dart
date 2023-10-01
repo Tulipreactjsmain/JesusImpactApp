@@ -8,7 +8,6 @@ import 'package:jimpact/utils/widgets/appbar.dart';
 import 'package:jimpact/utils/widgets/button.dart';
 import 'package:jimpact/utils/widgets/myicon.dart';
 import 'package:jimpact/utils/widgets/text_input.dart';
-import 'package:simple_notifier/simple_notifier.dart';
 
 class ChangePasswordView extends ConsumerStatefulWidget {
   const ChangePasswordView({super.key});
@@ -63,7 +62,7 @@ class _ChangePasswordViewState extends ConsumerState<ChangePasswordView> {
               47.sbH,
 
               //! password
-              isPasswordInvisible.listen(
+              isPasswordInvisible.sync(
                 builder: (context, value, child) => TextInputWidget(
                   hintText: AppTexts.password,
                   controller: _passwordController,
@@ -82,7 +81,7 @@ class _ChangePasswordViewState extends ConsumerState<ChangePasswordView> {
               ),
               34.sbH,
 
-              isReenterPasswordInvisible.listen(
+              isReenterPasswordInvisible.sync(
                 builder: (context, value, child) => TextInputWidget(
                   hintText: 'Confirm Password',
                   controller: _reenterPasswordController,

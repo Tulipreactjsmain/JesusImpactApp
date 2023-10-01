@@ -8,7 +8,6 @@ import 'package:jimpact/utils/nav.dart';
 import 'package:jimpact/utils/pop_overlay.dart';
 import 'package:jimpact/utils/widgets/appbar.dart';
 import 'package:jimpact/utils/widgets/button.dart';
-import 'package:simple_notifier/simple_notifier.dart';
 
 class JoinCommunityView extends ConsumerStatefulWidget {
   const JoinCommunityView({super.key});
@@ -58,7 +57,7 @@ class _JoinCommunityViewState extends ConsumerState<JoinCommunityView> {
                         .alignCenterLeft(),
 
                     60.sbH,
-                    selectedComms.listen(
+                    selectedComms.sync(
                       builder: (context, value, child) => SizedBox(
                         height: 400,
                         child: GridView(

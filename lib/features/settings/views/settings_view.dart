@@ -4,7 +4,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jimpact/features/settings/widgets/settings_tile.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
-import 'package:simple_notifier/simple_notifier.dart';
 
 import 'package:jimpact/features/auth/views/change_password_view.dart';
 import 'package:jimpact/theme/palette.dart';
@@ -73,7 +72,7 @@ class _SettingsViewState extends ConsumerState<SettingsView> {
                     colorType: TxtClrType.g54,
                   ),
                   const Spacer(),
-                  notif.listen(
+                  notif.sync(
                     builder: (context, value, child) => Switch.adaptive(
                       value: notif.value,
                       activeColor: Pallete.redColor,
@@ -109,7 +108,7 @@ class _SettingsViewState extends ConsumerState<SettingsView> {
                     colorType: TxtClrType.g54,
                   ),
                   const Spacer(),
-                  appNotif.listen(
+                  appNotif.sync(
                     builder: (context, value, child) => Switch.adaptive(
                       value: appNotif.value,
                       activeColor: Pallete.redColor,

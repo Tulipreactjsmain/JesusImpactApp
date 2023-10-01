@@ -15,7 +15,6 @@ import 'package:jimpact/utils/pop_overlay.dart';
 import 'package:jimpact/utils/widgets/button.dart';
 import 'package:jimpact/utils/widgets/myicon.dart';
 import 'package:jimpact/utils/widgets/text_input.dart';
-import 'package:simple_notifier/simple_notifier.dart';
 
 class CreateAccountView extends ConsumerStatefulWidget {
   const CreateAccountView({super.key});
@@ -156,7 +155,7 @@ class _CreateAccountViewState extends ConsumerState<CreateAccountView> {
                     34.sbH,
 
                     //! password
-                    isPasswordInvisible.listen(
+                    isPasswordInvisible.sync(
                       builder: (context, value, child) => TextInputWidget(
                         hintText: AppTexts.password,
                         controller: _passwordController,
@@ -175,7 +174,7 @@ class _CreateAccountViewState extends ConsumerState<CreateAccountView> {
                     ),
                     34.sbH,
 
-                    isReenterPasswordInvisible.listen(
+                    isReenterPasswordInvisible.sync(
                       builder: (context, value, child) => TextInputWidget(
                         hintText: 'Confirm Password',
                         controller: _reenterPasswordController,

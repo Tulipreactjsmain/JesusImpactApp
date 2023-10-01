@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:jimpact/cache/token_cache.dart';
 import 'package:jimpact/features/auth/controllers/auth_controller.dart';
+import 'package:jimpact/features/blogs/providers/blog_providers.dart';
 import 'package:jimpact/models/tokens/token_model.dart';
 import 'package:jimpact/models/user/user_model.dart';
 
@@ -117,7 +118,16 @@ class AuthRepository {
     required String password,
   }) async {
     try {
-      //! MAKE REQUEST
+      // _ref.watch(getAllBlogsProvider).when(
+      //       data: (data) {
+      //         'blog list here'.log();
+      //       },
+      //       error: (error, stackTrace) {
+      //         'error fetching blog list'.log();
+      //       },
+      //       loading: () {},
+      //     );
+      // ! MAKE REQUEST
       http.Request request = http.Request("POST", Uri.parse(AppUrls.userLogin));
 
       //! ADD HEADER SUPPORTS
@@ -140,8 +150,6 @@ class AuthRepository {
       Map<String, dynamic> responseInMap = jsonDecode(responseStream);
 
       responseInMap.log();
-
-      print(response.statusCode.toString());
 
       switch (response.statusCode) {
         //! SERVER REQUEST WAS SUCCESSFUL
@@ -187,59 +195,59 @@ class AuthRepository {
   }
 
   //! rotate tokens
-  Future<void> rotateTokens() async {
-    try {
-      //! FETCH USER TOKEN
-      final Iterable<UserToken?> userToken = await TokenCache.getUserTokens();
-      userToken.first!.refreshToken!.log();
-      http.Request request =
-          http.Request("POST", Uri.parse(AppUrls.rotateTokens))
-            ..headers.addAll({
-              "Content-Type": "application/json; charset=UTF-8",
-              "Authorization": "Bearer ${userToken.first!.refreshToken}"
-            });
+  // Future<void> rotateTokens() async {
+  //   try {
+  //     //! FETCH USER TOKEN
+  //     final Iterable<UserToken?> userToken = await TokenCache.getUserTokens();
+  //     userToken.first!.refreshToken!.log();
+  //     http.Request request =
+  //         http.Request("POST", Uri.parse(AppUrls.rotateTokens))
+  //           ..headers.addAll({
+  //             "Content-Type": "application/json; charset=UTF-8",
+  //             "Authorization": "Bearer ${userToken.first!.refreshToken}"
+  //           });
 
-      //! SEND REQUEST
-      http.StreamedResponse response = await request.send();
+  //     //! SEND REQUEST
+  //     http.StreamedResponse response = await request.send();
 
-      //! HOLD RESPONSE
-      String responseStream = await response.stream.bytesToString();
+  //     //! HOLD RESPONSE
+  //     String responseStream = await response.stream.bytesToString();
 
-      //! RESPONSE CONVERTED TO MAP, USED TO RUN AUTH TEST CASES AND DECIDE WHAT ACTION jTO TAKE AS SEEN BELOW
-      Map<String, dynamic> responseInMap = jsonDecode(responseStream);
+  //     //! RESPONSE CONVERTED TO MAP, USED TO RUN AUTH TEST CASES AND DECIDE WHAT ACTION jTO TAKE AS SEEN BELOW
+  //     Map<String, dynamic> responseInMap = jsonDecode(responseStream);
 
-      responseInMap.log();
+  //     responseInMap.log();
 
-      switch (response.statusCode) {
-        //! SERVER REQUEST WAS SUCCESSFUL
-        case 200:
+  //     switch (response.statusCode) {
+  //       //! SERVER REQUEST WAS SUCCESSFUL
+  //       case 200:
 
-          //! CACHE ACCESS TOKEN
-          await TokenCache.cacheUserTokens(
-              tokens: UserToken.fromJSON(responseInMap["data"]));
+  //         //! CACHE ACCESS TOKEN
+  //         await TokenCache.cacheUserTokens(
+  //             tokens: UserToken.fromJSON(responseInMap["data"]));
 
-        //! ACCOUNT ALREADY EXISTS
-        case 400:
-        // "Sign Up Response Failure: $responseStream".log();
-        //! RETURN THE FAILURE, SHOW THE MESSAGE USING SHORTCUT LEFT.
-        // responseInMap["message"].log();
+  //       //! ACCOUNT ALREADY EXISTS
+  //       case 400:
+  //       // "Sign Up Response Failure: $responseStream".log();
+  //       //! RETURN THE FAILURE, SHOW THE MESSAGE USING SHORTCUT LEFT.
+  //       // responseInMap["message"].log();
 
-        //! SERVER REQUEST FAILED OR ANY OTHER FAILURE TYPE
-        default:
-        // "Default Sign Up Error Code: ${response.statusCode} \nResponse: $responseStream, \nReason: ${response.reasonPhrase}"
-        // .log();
-        // responseInMap["message"].log();
-      }
-    } on SocketException catch (error) {
-      "Socket Exception ${error.message.toString()}".log();
-    } on FormatException catch (error) {
-      "Format Exception ${error.message.toString()}".log();
-    } on HttpException catch (error) {
-      "Http Exception ${error.message.toString()}".log();
-    } catch (error) {
-      "User Sign Up Error ${error.toString()}".log();
-    }
-  }
+  //       //! SERVER REQUEST FAILED OR ANY OTHER FAILURE TYPE
+  //       default:
+  //       // "Default Sign Up Error Code: ${response.statusCode} \nResponse: $responseStream, \nReason: ${response.reasonPhrase}"
+  //       // .log();
+  //       // responseInMap["message"].log();
+  //     }
+  //   } on SocketException catch (error) {
+  //     "Socket Exception ${error.message.toString()}".log();
+  //   } on FormatException catch (error) {
+  //     "Format Exception ${error.message.toString()}".log();
+  //   } on HttpException catch (error) {
+  //     "Http Exception ${error.message.toString()}".log();
+  //   } catch (error) {
+  //     "User Sign Up Error ${error.toString()}".log();
+  //   }
+  // }
 
   //! get user data
   Future<void> getUserData() async {
@@ -293,340 +301,6 @@ class AuthRepository {
       "Http Exception ${error.message.toString()}".log();
     } catch (error) {
       "GET user details default Error ${error.toString()}".log();
-    }
-  }
-
-  //! send SMS OTP
-  FutureEither<String> sendSMSOTP({required String phoneNumber}) async {
-    try {
-      //! FETCH USER TOKEN
-      final Iterable<UserToken?> userToken = await TokenCache.getUserTokens();
-
-      //! MAKE REQUEST
-      http.Request request =
-          http.Request("POST", Uri.parse(AppUrls.sendSMSOTP));
-
-      //! ADD HEADER SUPPORTS
-      request.headers.addAll({
-        "Content-Type": "application/json; charset=UTF-8",
-        "Authorization": "Bearer ${userToken.first!.accessToken}"
-      });
-
-      //! REQUEST BODY
-      request.body = jsonEncode({
-        "receiver": phoneNumber,
-      });
-
-      //! SEND REQUEST
-      http.StreamedResponse response = await request.send();
-
-      //! HOLD RESPONSE
-      String responseStream = await response.stream.bytesToString();
-
-      //! RESPONSE CONVERTED TO MAP, CAN BE USED TO RUN AUTH TEST CASES AND DECIDE WHAT ACTION TO TAKE AS SEEN BELOW
-      Map<String, dynamic> responseInMap = jsonDecode(responseStream);
-
-      responseInMap.log();
-
-      switch (response.statusCode) {
-        //! SERVER REQUEST WAS SUCCESSFUL
-        case 200:
-          return right(responseInMap["message"]);
-
-        //! SERVER REQUEST FAILED
-        case 400:
-          "Sign Up Response Failure: $responseStream".log();
-          //! RETURN THE FAILURE, SHOW THE MESSAGE USING SHORTCUT LEFT.
-          return left(Failure(responseInMap["message"]));
-
-        //! ANY OTHER FAILURE TYPE
-        default:
-          "Default Sign Up Error Code: ${response.statusCode} \nResponse: $responseStream, \nReason: ${response.reasonPhrase}"
-              .log();
-          return left(Failure(responseInMap["message"]));
-      }
-    } on SocketException catch (error) {
-      "Socket Exception ${error.message.toString()}".log();
-      return left(Failure(NetworkErrors.socketException));
-    } on FormatException catch (error) {
-      "Format Exception ${error.message.toString()}".log();
-      return left(Failure(NetworkErrors.formatException));
-    } on HttpException catch (error) {
-      "Http Exception ${error.message.toString()}".log();
-      return left(Failure(NetworkErrors.httpException));
-    } catch (error) {
-      "User Sign Up Error ${error.toString()}".log();
-      return left(Failure(NetworkErrors.defaultException));
-    }
-  }
-
-  //! verify SMS OTP
-  FutureEither<String> verifySMSOTP({
-    required String phoneNumber,
-    required String oTP,
-  }) async {
-    try {
-      //! FETCH USER TOKEN
-      final Iterable<UserToken?> userToken = await TokenCache.getUserTokens();
-
-      //! MAKE REQUEST
-      http.Request request =
-          http.Request("POST", Uri.parse(AppUrls.verifySMSOTP));
-
-      //! ADD HEADER SUPPORTS
-      request.headers.addAll({
-        "Content-Type": "application/json; charset=UTF-8",
-        "Authorization": "Bearer ${userToken.first!.accessToken}"
-      });
-
-      //! REQUEST BODY
-      request.body = jsonEncode({
-        "receiver": phoneNumber,
-        "otp": oTP,
-      });
-
-      //! SEND REQUEST
-      http.StreamedResponse response = await request.send();
-
-      //! HOLD RESPONSE
-      String responseStream = await response.stream.bytesToString();
-
-      //! RESPONSE CONVERTED TO MAP, CAN BE USED TO RUN AUTH TEST CASES AND DECIDE WHAT ACTION TO TAKE AS SEEN BELOW
-      Map<String, dynamic> responseInMap = jsonDecode(responseStream);
-
-      responseInMap.log();
-
-      switch (response.statusCode) {
-        //! SERVER REQUEST WAS SUCCESSFUL
-        case 200:
-          return right(responseInMap["message"]);
-
-        //! SERVER REQUEST FAILED
-        case 400:
-          "Sign Up Response Failure: $responseStream".log();
-          //! RETURN THE FAILURE, SHOW THE MESSAGE USING SHORTCUT LEFT.
-          return left(Failure(responseInMap["message"]));
-
-        //! ANY OTHER FAILURE TYPE
-        default:
-          "Default Sign Up Error Code: ${response.statusCode} \nResponse: $responseStream, \nReason: ${response.reasonPhrase}"
-              .log();
-          return left(Failure(responseInMap["message"]));
-      }
-    } on SocketException catch (error) {
-      "Socket Exception ${error.message.toString()}".log();
-      return left(Failure(NetworkErrors.socketException));
-    } on FormatException catch (error) {
-      "Format Exception ${error.message.toString()}".log();
-      return left(Failure(NetworkErrors.formatException));
-    } on HttpException catch (error) {
-      "Http Exception ${error.message.toString()}".log();
-      return left(Failure(NetworkErrors.httpException));
-    } catch (error) {
-      "User Sign Up Error ${error.toString()}".log();
-      return left(Failure(NetworkErrors.defaultException));
-    }
-  }
-
-  //! send email OTP
-  FutureEither<String> sendEmailOTP({required String email}) async {
-    try {
-      //! FETCH USER TOKEN
-      // final Iterable<UserToken?> userToken = await TokenCache.getUserTokens();
-
-      //! MAKE REQUEST
-      http.Request request =
-          http.Request("POST", Uri.parse(AppUrls.sendEmailOTP));
-
-      //! ADD HEADER SUPPORTS
-      request.headers.addAll({
-        "Content-Type": "application/json; charset=UTF-8",
-        // "Authorization": "Bearer ${userToken.first!.accessToken}"
-      });
-
-      //! REQUEST BODY
-      request.body = jsonEncode({
-        "receiver": email,
-      });
-
-      //! SEND REQUEST
-      http.StreamedResponse response = await request.send();
-
-      //! HOLD RESPONSE
-      String responseStream = await response.stream.bytesToString();
-
-      //! RESPONSE CONVERTED TO MAP, CAN BE USED TO RUN AUTH TEST CASES AND DECIDE WHAT ACTION TO TAKE AS SEEN BELOW
-      Map<String, dynamic> responseInMap = jsonDecode(responseStream);
-
-      responseInMap.log();
-
-      switch (response.statusCode) {
-        //! SERVER REQUEST WAS SUCCESSFUL
-        case 200:
-          return right(responseInMap["message"]);
-
-        //! SERVER REQUEST FAILED
-        case 400:
-          "Sign Up Response Failure: $responseStream".log();
-          //! RETURN THE FAILURE, SHOW THE MESSAGE USING SHORTCUT LEFT.
-          return left(Failure(responseInMap["message"]));
-
-        //! ANY OTHER FAILURE TYPE
-        default:
-          "Default Sign Up Error Code: ${response.statusCode} \nResponse: $responseStream, \nReason: ${response.reasonPhrase}"
-              .log();
-          return left(Failure(responseInMap["message"]));
-      }
-    } on SocketException catch (error) {
-      "Socket Exception ${error.message.toString()}".log();
-      return left(Failure(NetworkErrors.socketException));
-    } on FormatException catch (error) {
-      "Format Exception ${error.message.toString()}".log();
-      return left(Failure(NetworkErrors.formatException));
-    } on HttpException catch (error) {
-      "Http Exception ${error.message.toString()}".log();
-      return left(Failure(NetworkErrors.httpException));
-    } catch (error) {
-      "User Sign Up Error ${error.toString()}".log();
-      return left(Failure(NetworkErrors.defaultException));
-    }
-  }
-
-  //! verify Email OTP
-  FutureEither<String> verifyEmailOTP({
-    required String email,
-    required String oTP,
-  }) async {
-    try {
-      //! FETCH USER TOKEN
-      // final Iterable<UserToken?> userToken = await TokenCache.getUserTokens();
-
-      //! MAKE REQUEST
-      http.Request request =
-          http.Request("POST", Uri.parse(AppUrls.verifyEmailOTP));
-
-      //! ADD HEADER SUPPORTS
-      request.headers.addAll({
-        "Content-Type": "application/json; charset=UTF-8",
-        // "Authorization": "Bearer ${userToken.first!.accessToken}"
-      });
-
-      //! REQUEST BODY
-      request.body = jsonEncode({
-        "receiver": email,
-        "otp": oTP,
-      });
-
-      //! SEND REQUEST
-      http.StreamedResponse response = await request.send();
-
-      //! HOLD RESPONSE
-      String responseStream = await response.stream.bytesToString();
-
-      //! RESPONSE CONVERTED TO MAP, CAN BE USED TO RUN AUTH TEST CASES AND DECIDE WHAT ACTION TO TAKE AS SEEN BELOW
-      Map<String, dynamic> responseInMap = jsonDecode(responseStream);
-
-      responseInMap.log();
-
-      switch (response.statusCode) {
-        //! SERVER REQUEST WAS SUCCESSFUL
-        case 200:
-          return right(responseInMap["data"]);
-
-        //! SERVER REQUEST FAILED
-        case 400:
-          "Sign Up Response Failure: $responseStream".log();
-          //! RETURN THE FAILURE, SHOW THE MESSAGE USING SHORTCUT LEFT.
-          return left(Failure(responseInMap["message"]));
-
-        //! ANY OTHER FAILURE TYPE
-        default:
-          "Default Sign Up Error Code: ${response.statusCode} \nResponse: $responseStream, \nReason: ${response.reasonPhrase}"
-              .log();
-          return left(Failure(responseInMap["message"]));
-      }
-    } on SocketException catch (error) {
-      "Socket Exception ${error.message.toString()}".log();
-      return left(Failure(NetworkErrors.socketException));
-    } on FormatException catch (error) {
-      "Format Exception ${error.message.toString()}".log();
-      return left(Failure(NetworkErrors.formatException));
-    } on HttpException catch (error) {
-      "Http Exception ${error.message.toString()}".log();
-      return left(Failure(NetworkErrors.httpException));
-    } catch (error) {
-      "User Sign Up Error ${error.toString()}".log();
-      return left(Failure(NetworkErrors.defaultException));
-    }
-  }
-
-  //! change password
-  FutureEither<String> changePassword({
-    required String password,
-    required String token,
-  }) async {
-    try {
-      //! FETCH USER TOKEN
-      // final Iterable<UserToken?> userToken = await TokenCache.getUserTokens();
-
-      //! MAKE REQUEST
-      http.Request request =
-          http.Request("PATCH", Uri.parse(AppUrls.chnagePassword));
-
-      //! ADD HEADER SUPPORTS
-      request.headers.addAll({
-        "Content-Type": "application/json; charset=UTF-8",
-        // "Authorization": "Bearer ${userToken.first!.accessToken}"
-      });
-
-      //! REQUEST BODY
-      request.body = jsonEncode({
-        "password": password,
-        "userType": "driver",
-        "token": token,
-      });
-
-      //! SEND REQUEST
-      http.StreamedResponse response = await request.send();
-
-      //! HOLD RESPONSE
-      String responseStream = await response.stream.bytesToString();
-
-      //! RESPONSE CONVERTED TO MAP, CAN BE USED TO RUN AUTH TEST CASES AND DECIDE WHAT ACTION TO TAKE AS SEEN BELOW
-      Map<String, dynamic> responseInMap = jsonDecode(responseStream);
-
-      responseInMap.log();
-
-      switch (response.statusCode) {
-        //! SERVER REQUEST WAS SUCCESSFUL
-        case 200:
-          return right(responseInMap["message"]);
-
-        //! SERVER REQUEST FAILED
-        case 400:
-          "Sign Up Response Failure: $responseStream".log();
-          //! RETURN THE FAILURE, SHOW THE MESSAGE USING SHORTCUT LEFT.
-          return left(Failure(responseInMap["message"]));
-
-        //! ANY OTHER FAILURE TYPE
-        default:
-          "Default Sign Up Error Code: ${response.statusCode} \nResponse: $responseStream, \nReason: ${response.reasonPhrase}"
-              .log();
-          return left(Failure(responseInMap["message"]));
-        // return left(Failure('An error occurred'));
-      }
-    } on SocketException catch (error) {
-      "Socket Exception ${error.message.toString()}".log();
-      return left(Failure(NetworkErrors.socketException));
-    } on FormatException catch (error) {
-      "Format Exception ${error.message.toString()}".log();
-      return left(Failure(NetworkErrors.formatException));
-    } on HttpException catch (error) {
-      "Http Exception ${error.message.toString()}".log();
-      return left(Failure(NetworkErrors.httpException));
-    } catch (error) {
-      "User Sign Up Error ${error.toString()}".log();
-      return left(Failure(NetworkErrors.defaultException));
     }
   }
 }

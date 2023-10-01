@@ -2,10 +2,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jimpact/features/blogs/providers/blog_providers.dart';
 import 'package:jimpact/features/blogs/views/blogs_view.dart';
 import 'package:jimpact/features/blogs/widgets/blog_card.dart';
 import 'package:jimpact/features/groups/views/open_group_view.dart';
 import 'package:jimpact/features/home/widgets/search_bar.dart';
+import 'package:jimpact/models/blogs/blog_model.dart';
 import 'package:jimpact/utils/nav.dart';
 import 'package:jimpact/utils/widgets/button.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
@@ -19,6 +21,7 @@ class HomeFeedView extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    AsyncValue<List<BlogModel>> asyncBlogsList = ref.watch(getAllBlogsProvider);
     return SizedBox(
       height: height(context),
       width: width(context),
@@ -67,18 +70,49 @@ class HomeFeedView extends ConsumerWidget {
                         SizedBox(
                           height: 290.h,
                           width: double.infinity,
-                          child: ListView.builder(
-                            padding: EdgeInsets.only(left: 34.w, right: 17.w),
-                            scrollDirection: Axis.horizontal,
-                            physics: const AlwaysScrollableScrollPhysics(
-                              parent: BouncingScrollPhysics(),
-                            ),
-                            itemCount: 7,
-                            itemBuilder: (context, index) {
-                              return Padding(
+                          child: asyncBlogsList.when(
+                            data: (List<BlogModel> blogs) {
+                              return ListView.builder(
                                 padding:
-                                    EdgeInsets.only(right: 16.w, bottom: 2.h),
-                                child: const BlogCard(),
+                                    EdgeInsets.only(left: 34.w, right: 17.w),
+                                scrollDirection: Axis.horizontal,
+                                physics: const AlwaysScrollableScrollPhysics(
+                                  parent: BouncingScrollPhysics(),
+                                ),
+                                itemCount: 7,
+                                itemBuilder: (context, index) {
+                                  return Padding(
+                                    padding: EdgeInsets.only(
+                                        right: 16.w, bottom: 2.h),
+                                    child: BlogCardd(
+                                      blog: blogs[index],
+                                    ),
+                                  );
+                                },
+                              );
+                            },
+                            error: (error, stackTrace) {
+                              'error fetching blog list'.log();
+                              return 'Error fetching blogs'
+                                  .txt14()
+                                  .alignCenter();
+                            },
+                            loading: () {
+                              return ListView.builder(
+                                padding:
+                                    EdgeInsets.only(left: 34.w, right: 17.w),
+                                scrollDirection: Axis.horizontal,
+                                physics: const AlwaysScrollableScrollPhysics(
+                                  parent: BouncingScrollPhysics(),
+                                ),
+                                itemCount: 7,
+                                itemBuilder: (context, index) {
+                                  return Padding(
+                                    padding: EdgeInsets.only(
+                                        right: 16.w, bottom: 2.h),
+                                    child: const BlogCardSkeleton(),
+                                  );
+                                },
                               );
                             },
                           ),

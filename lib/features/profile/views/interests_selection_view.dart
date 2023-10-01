@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jimpact/features/profile/widgets/interest_selection_tile.dart';
-import 'package:simple_notifier/simple_notifier.dart';
 
 import 'package:jimpact/features/profile/views/join_community_view.dart';
 import 'package:jimpact/theme/palette.dart';
@@ -286,7 +285,7 @@ class _InterestsSelectionViewState
               //     ],
               //   ),
               // ),
-              selectedInterests.listen(
+              selectedInterests.sync(
                 builder: (context, value, child) => Wrap(
                   spacing: 16.w,
                   runSpacing: 16.h,

@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jimpact/theme/palette.dart';
 import 'package:jimpact/utils/app_extensions.dart';
 import 'package:jimpact/utils/widgets/appbar.dart';
-import 'package:simple_notifier/simple_notifier.dart';
 
 class FAQsView extends ConsumerStatefulWidget {
   const FAQsView({super.key});
@@ -39,7 +38,7 @@ class _FAQsViewState extends ConsumerState<FAQsView> {
                   .alignCenterLeft(),
               36.sbH,
 
-              openIndex.listen(
+              openIndex.sync(
                 builder: (context, value, child) => Column(
                   children: List.generate(
                     5,
