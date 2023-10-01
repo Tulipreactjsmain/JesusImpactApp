@@ -4,7 +4,6 @@ import 'dart:io';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:jimpact/cache/token_cache.dart';
 import 'package:jimpact/features/auth/controllers/auth_controller.dart';
-import 'package:jimpact/features/blogs/providers/blog_providers.dart';
 import 'package:jimpact/models/tokens/token_model.dart';
 import 'package:jimpact/models/user/user_model.dart';
 
@@ -57,23 +56,9 @@ class AuthRepository {
       //! RESPONSE CONVERTED TO MAP, USED TO RUN AUTH TEST CASES AND DECIDE WHAT ACTION TO TAKE AS SEEN BELOW
       Map<String, dynamic> responseInMap = jsonDecode(responseStream);
 
-      print(responseInMap.toString());
-
-      print(response.statusCode.toString());
-
       switch (response.statusCode) {
         //! SERVER REQUEST WAS SUCCESSFUL
         case 201:
-          print('hey');
-          //! CONVERT DATA TO MODEL
-          UserModel registeredUser = UserModel(
-            userName: responseInMap['username'],
-            firstName: responseInMap['first_name'],
-            lastName: responseInMap['last_name'],
-            email: responseInMap['email'],
-          );
-
-          print(registeredUser.firstName);
 
           //! CACHE ACCESS TOKEN
           // await TokenCache.cacheUserTokens(
@@ -181,16 +166,16 @@ class AuthRepository {
       }
     } on SocketException catch (error) {
       "Socket Exception ${error.message.toString()}".log();
-      return left(Failure(NetworkErrors.socketException));
+      return left(Failure('An error occurred while signing in, check your credentials'));
     } on FormatException catch (error) {
       "Format Exception ${error.message.toString()}".log();
-      return left(Failure(NetworkErrors.formatException));
+      return left(Failure('An error occurred while signing in, check your credentials'));
     } on HttpException catch (error) {
       "Http Exception ${error.message.toString()}".log();
-      return left(Failure(NetworkErrors.httpException));
+      return left(Failure('An error occurred while signing in, check your credentials'));
     } catch (error) {
       "User Sign Up Error ${error.toString()}".log();
-      return left(Failure(NetworkErrors.defaultException));
+      return left(Failure('An error occurred while signing in, check your credentials'));
     }
   }
 

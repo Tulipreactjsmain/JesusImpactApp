@@ -1,5 +1,4 @@
 //! THIS FILE CONTAINS HOPEFULLY, ALL EXTENSIONS USED IN THE APP.
-import "dart:developer" as dev_tools show log;
 import "dart:io";
 import "package:flutter/foundation.dart";
 import "package:flutter/material.dart";

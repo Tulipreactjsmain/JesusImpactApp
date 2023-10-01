@@ -7,6 +7,9 @@ abstract class AppUrls {
   static const String userLogin = '$_baseUrl/login/';
 
   //! profile
+  static const String profile = '$_baseUrl/profile/';
+
+  //! profile
   static const String getUserData = '$_baseUrl/profile/';
 
   //! blogs

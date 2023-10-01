@@ -51,76 +51,76 @@ class _SettingsViewState extends ConsumerState<SettingsView> {
             70.sbH,
 
             //! notifications
-            SizedBox(
-              height: 50.h,
-              width: double.infinity,
-              child: Row(
-                children: [
-                  Container(
-                    height: 50.h,
-                    width: 50.h,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15.r),
-                      color: const Color(0xFFD5D5D5),
-                    ),
-                    child: Center(
-                      child: Icon(PhosphorIcons.bell, size: 24.sp),
-                    ),
-                  ),
-                  20.sbW,
-                  'Turn on Notifications'.txt16(
-                    colorType: TxtClrType.g54,
-                  ),
-                  const Spacer(),
-                  notif.sync(
-                    builder: (context, value, child) => Switch.adaptive(
-                      value: notif.value,
-                      activeColor: Pallete.redColor,
-                      onChanged: (value) {
-                        notif.value = value;
-                      },
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            28.sbH,
+            // SizedBox(
+            //   height: 50.h,
+            //   width: double.infinity,
+            //   child: Row(
+            //     children: [
+            //       Container(
+            //         height: 50.h,
+            //         width: 50.h,
+            //         decoration: BoxDecoration(
+            //           borderRadius: BorderRadius.circular(15.r),
+            //           color: const Color(0xFFD5D5D5),
+            //         ),
+            //         child: Center(
+            //           child: Icon(PhosphorIcons.bell, size: 24.sp),
+            //         ),
+            //       ),
+            //       20.sbW,
+            //       'Turn on Notifications'.txt16(
+            //         colorType: TxtClrType.g54,
+            //       ),
+            //       const Spacer(),
+            //       notif.sync(
+            //         builder: (context, value, child) => Switch.adaptive(
+            //           value: notif.value,
+            //           activeColor: Pallete.redColor,
+            //           onChanged: (value) {
+            //             notif.value = value;
+            //           },
+            //         ),
+            //       ),
+            //     ],
+            //   ),
+            // ),
+            // 28.sbH,
 
             //! app notifications
-            SizedBox(
-              height: 50.h,
-              width: double.infinity,
-              child: Row(
-                children: [
-                  Container(
-                    height: 50.h,
-                    width: 50.h,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15.r),
-                      color: const Color(0xFFD5D5D5),
-                    ),
-                    child: Center(
-                      child: Icon(PhosphorIcons.bell, size: 24.sp),
-                    ),
-                  ),
-                  20.sbW,
-                  'Turn on App Notifications'.txt16(
-                    colorType: TxtClrType.g54,
-                  ),
-                  const Spacer(),
-                  appNotif.sync(
-                    builder: (context, value, child) => Switch.adaptive(
-                      value: appNotif.value,
-                      activeColor: Pallete.redColor,
-                      onChanged: (value) {
-                        appNotif.value = value;
-                      },
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            28.sbH,
+            // SizedBox(
+            //   height: 50.h,
+            //   width: double.infinity,
+            //   child: Row(
+            //     children: [
+            //       Container(
+            //         height: 50.h,
+            //         width: 50.h,
+            //         decoration: BoxDecoration(
+            //           borderRadius: BorderRadius.circular(15.r),
+            //           color: const Color(0xFFD5D5D5),
+            //         ),
+            //         child: Center(
+            //           child: Icon(PhosphorIcons.bell, size: 24.sp),
+            //         ),
+            //       ),
+            //       20.sbW,
+            //       'Turn on App Notifications'.txt16(
+            //         colorType: TxtClrType.g54,
+            //       ),
+            //       const Spacer(),
+            //       appNotif.sync(
+            //         builder: (context, value, child) => Switch.adaptive(
+            //           value: appNotif.value,
+            //           activeColor: Pallete.redColor,
+            //           onChanged: (value) {
+            //             appNotif.value = value;
+            //           },
+            //         ),
+            //       ),
+            //     ],
+            //   ),
+            // ),
+            // 28.sbH,
 
             //! change password
             SettingsTile(

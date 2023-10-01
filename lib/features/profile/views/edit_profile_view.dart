@@ -5,13 +5,15 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:jimpact/features/auth/controllers/auth_controller.dart';
+import 'package:jimpact/features/profile/providers/profile_providers.dart';
+import 'package:jimpact/models/user/user_model.dart';
 import 'package:jimpact/shared/app_texts.dart';
 import 'package:jimpact/theme/palette.dart';
 import 'package:jimpact/utils/app_constants.dart';
 import 'package:jimpact/utils/app_extensions.dart';
 import 'package:jimpact/utils/widgets/appbar.dart';
 import 'package:jimpact/utils/widgets/button.dart';
-import 'package:jimpact/utils/widgets/myicon.dart';
 import 'package:jimpact/utils/widgets/text_input.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
@@ -65,6 +67,8 @@ class _EditProfileViewState extends ConsumerState<EditProfileView> {
 
   @override
   Widget build(BuildContext context) {
+    UserModel user = ref.watch(userProvider)!;
+    bool isProfileLoading = ref.watch(profileControllerProvider);
     return Scaffold(
       appBar: customAppBar('Edit Profile', context: context),
       body: SizedBox(
@@ -109,73 +113,95 @@ class _EditProfileViewState extends ConsumerState<EditProfileView> {
                 62.sbH,
                 //! first name
                 TextInputWidget(
-                  hintText: AppTexts.firstName,
+                  hintText: '${AppTexts.firstName}: ${user.firstName!}',
                   controller: _firstNameController,
+                  readOnly: true,
                 ),
                 34.sbH,
 
                 //! last name
                 TextInputWidget(
-                  hintText: AppTexts.lastName,
+                  hintText: '${AppTexts.lastName}: ${user.lastName!}',
                   controller: _lastNameController,
-                ),
-                34.sbH,
-
-                //! user name
-                TextInputWidget(
-                  hintText: 'Username',
-                  controller: _usernameController,
+                  readOnly: true,
                 ),
                 34.sbH,
 
                 //! email
                 TextInputWidget(
                   keyboardType: TextInputType.emailAddress,
-                  hintText: AppTexts.email,
+                  hintText: '${AppTexts.email}: ${user.email!}',
                   controller: _emailController,
+                  readOnly: true,
                 ),
                 34.sbH,
 
-                //! password
-                isPasswordInvisible.sync(
-                  builder: (context, value, child) => TextInputWidget(
-                    hintText: AppTexts.password,
-                    controller: _passwordController,
-                    obscuretext: isPasswordInvisible.value,
-                    suffixIcon: Padding(
-                      padding: 15.padH,
-                      child: MyIcon(
-                        icon: 'showpassword',
-                        height: 15.h,
-                        color: isPasswordInvisible.value == false
-                            ? Pallete.redColor
-                            : null,
-                      ),
-                    ).tap(onTap: passwordVisibility),
-                  ),
+                //! user name
+                TextInputWidget(
+                  hintText: 'Current username: ${user.userName!}',
+                  controller: _usernameController,
                 ),
                 34.sbH,
-                BButton(
-                  onTap: () {},
-                  isText: false,
-                  item: Padding(
-                    padding: 20.padH,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        'Save'.txt(
-                          size: 20.sp,
-                          color: Colors.white,
-                          fontWeightType: TxtFntWt.med,
+
+                // //! password
+                // isPasswordInvisible.sync(
+                //   builder: (context, value, child) => TextInputWidget(
+                //     hintText: AppTexts.password,
+                //     controller: _passwordController,
+                //     obscuretext: isPasswordInvisible.value,
+                //     suffixIcon: Padding(
+                //       padding: 15.padH,
+                //       child: MyIcon(
+                //         icon: 'showpassword',
+                //         height: 15.h,
+                //         color: isPasswordInvisible.value == false
+                //             ? Pallete.redColor
+                //             : null,
+                //       ),
+                //     ).tap(onTap: passwordVisibility),
+                //   ),
+                // ),
+                34.sbH,
+
+                isProfileLoading
+                    ? SizedBox(
+                        height: 50.h,
+                        child: const Center(
+                            child: CircularProgressIndicator(
+                          color: Pallete.redColor,
+                        )),
+                      )
+                    : BButton(
+                        onTap: () {
+                          ref
+                              .read(profileControllerProvider.notifier)
+                              .updateUsername(
+                                isPassword: false,
+                                username: _usernameController.text,
+                                context: context,
+                                rightSideEffect: () =>
+                                    _usernameController.clear(),
+                              );
+                        },
+                        isText: false,
+                        item: Padding(
+                          padding: 20.padH,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              'Save'.txt(
+                                size: 20.sp,
+                                color: Colors.white,
+                                fontWeightType: TxtFntWt.med,
+                              ),
+                              const Icon(
+                                PhosphorIcons.floppyDiskFill,
+                                color: Colors.white,
+                              )
+                            ],
+                          ),
                         ),
-                        const Icon(
-                          PhosphorIcons.floppyDiskFill,
-                          color: Colors.white,
-                        )
-                      ],
-                    ),
-                  ),
-                )
+                      )
               ],
             ),
           ),

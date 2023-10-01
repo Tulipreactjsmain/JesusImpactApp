@@ -1,18 +1,12 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:jimpact/cache/token_cache.dart';
-import 'package:jimpact/features/auth/controllers/auth_controller.dart';
 import 'package:jimpact/models/blogs/blog_model.dart';
-import 'package:jimpact/models/tokens/token_model.dart';
-import 'package:jimpact/models/user/user_model.dart';
 
 import 'package:jimpact/shared/app_urls.dart';
 import 'package:jimpact/utils/app_extensions.dart';
 import 'package:jimpact/utils/failure.dart';
 import 'package:jimpact/utils/network_errors.dart';
-import 'package:jimpact/utils/type_defs.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:http/http.dart' as http;
 

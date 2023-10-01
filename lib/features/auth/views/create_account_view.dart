@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jimpact/features/auth/providers/auth_providers.dart';
 import 'package:jimpact/features/auth/views/sign_in_view.dart';
-import 'package:jimpact/features/profile/views/interests_selection_view.dart';
 import 'package:jimpact/shared/app_texts.dart';
 import 'package:jimpact/theme/palette.dart';
 import 'package:jimpact/utils/app_constants.dart';

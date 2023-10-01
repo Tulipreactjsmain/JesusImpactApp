@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jimpact/features/auth/controllers/auth_controller.dart';
 import 'package:jimpact/features/auth/views/choose_auth_route_view.dart';
 import 'package:jimpact/features/base_nav/wrapper/base_nav_controller.dart';
 import 'package:jimpact/features/blogs/views/blogs_view.dart';
@@ -9,6 +10,7 @@ import 'package:jimpact/features/help/views/contact_us_view.dart';
 import 'package:jimpact/features/help/views/help_view.dart';
 import 'package:jimpact/features/profile/views/edit_profile_view.dart';
 import 'package:jimpact/features/settings/views/settings_view.dart';
+import 'package:jimpact/models/user/user_model.dart';
 
 import 'package:jimpact/theme/palette.dart';
 import 'package:jimpact/utils/app_extensions.dart';
@@ -22,6 +24,7 @@ class NavDrawer extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    UserModel user = ref.watch(userProvider)!;
     return Drawer(
       backgroundColor: Pallete.whiteColor,
       width: 350.w,
@@ -43,14 +46,14 @@ class NavDrawer extends ConsumerWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         //! name
-                        'Name Surname'.txt16(
+                        '${user.firstName} ${user.lastName}'.txt16(
                           fontWeightType: TxtFntWt.med,
                           colorType: TxtClrType.g54,
                         ),
                         2.sbH,
 
                         //! username
-                        '@username'.txt(
+                        '@${user.userName}'.txt(
                           size: 13.sp,
                           colorType: TxtClrType.g54,
                         ),
@@ -125,7 +128,9 @@ class NavDrawer extends ConsumerWidget {
                         goTo(context: context, view: const ContactUsView());
                         break;
                       case 3:
-                        goTo(context: context, view: const ChooseAuthRouteView());
+                        goTo(
+                            context: context,
+                            view: const ChooseAuthRouteView());
                         break;
                       default:
                     }

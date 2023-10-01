@@ -1,4 +1,4 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+// ignore_for_file: public_member_api_docs, sort_constructors_first, unused_field
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -73,7 +73,7 @@ class AuthController extends StateNotifier<bool> {
         theMessage: l.message,
         theType: NotificationType.failure,
       ),
-      (bool user) {
+      (bool result) {
         onTap!.call();
       },
     );

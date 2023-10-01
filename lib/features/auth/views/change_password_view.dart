@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jimpact/features/profile/providers/profile_providers.dart';
 import 'package:jimpact/shared/app_texts.dart';
 import 'package:jimpact/theme/palette.dart';
 import 'package:jimpact/utils/app_extensions.dart';
@@ -41,6 +42,7 @@ class _ChangePasswordViewState extends ConsumerState<ChangePasswordView> {
 
   @override
   Widget build(BuildContext context) {
+    bool isProfileLoading = ref.watch(profileControllerProvider);
     return Scaffold(
       backgroundColor: Pallete.bgGreyFB,
       appBar: customAppBar('', context: context),
@@ -100,10 +102,29 @@ class _ChangePasswordViewState extends ConsumerState<ChangePasswordView> {
               ),
 
               400.sbH,
-              BButton(
-                onTap: () {},
-                text: 'Change Password',
-              ),
+              isProfileLoading
+                  ? SizedBox(
+                      height: 50.h,
+                      child: const Center(
+                          child: CircularProgressIndicator(
+                        color: Pallete.redColor,
+                      )),
+                    )
+                  : BButton(
+                      onTap: () {
+                        ref
+                            .read(profileControllerProvider.notifier)
+                            .updateUsername(
+                                isPassword: true,
+                                username: _passwordController.text,
+                                context: context,
+                                rightSideEffect: () {
+                                  _passwordController.clear();
+                                  _reenterPasswordController.clear();
+                                });
+                      },
+                      text: 'Change Password',
+                    ),
             ],
           ),
         ),

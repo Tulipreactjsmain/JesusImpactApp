@@ -70,35 +70,35 @@ class ChooseAuthRouteView extends ConsumerWidget {
                 367.sbH,
     
                 //! sign up with
-                AppTexts.orSignUp.txt18(
-                  colorType: TxtClrType.g54,
-                  textAlign: TextAlign.center,
-                ),
+                // AppTexts.orSignUp.txt18(
+                //   colorType: TxtClrType.g54,
+                //   textAlign: TextAlign.center,
+                // ),
     
-                27.sbH,
-                SizedBox(
-                  width: 197.w,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: List.generate(
-                      3,
-                      (index) => CircleAvatar(
-                        backgroundColor: Pallete.textInputFillGreyEE,
-                        child: Container(
-                            padding: const EdgeInsets.all(9),
-                            child: switch (index) {
-                              0 => Image.network(
-                                  "https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png"),
-                              1 => Image.network(
-                                  "https://cdn.icon-icons.com/icons2/1826/PNG/512/4202107facebookfblogosocialsocialmedia-115710_115591.png"),
-                              2 => Image.network(
-                                  "https://img.freepik.com/free-icon/twitter_318-674515.jpg"),
-                              _ => null
-                            }),
-                      ),
-                    ),
-                  ),
-                ),
+                // 27.sbH,
+                // SizedBox(
+                //   width: 197.w,
+                //   child: Row(
+                //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //     children: List.generate(
+                //       3,
+                //       (index) => CircleAvatar(
+                //         backgroundColor: Pallete.textInputFillGreyEE,
+                //         child: Container(
+                //             padding: const EdgeInsets.all(9),
+                //             child: switch (index) {
+                //               0 => Image.network(
+                //                   "https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png"),
+                //               1 => Image.network(
+                //                   "https://cdn.icon-icons.com/icons2/1826/PNG/512/4202107facebookfblogosocialsocialmedia-115710_115591.png"),
+                //               2 => Image.network(
+                //                   "https://img.freepik.com/free-icon/twitter_318-674515.jpg"),
+                //               _ => null
+                //             }),
+                //       ),
+                //     ),
+                //   ),
+                // ),
               ],
             ),
           ),

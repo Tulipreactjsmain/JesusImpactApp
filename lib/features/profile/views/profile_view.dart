@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jimpact/features/auth/controllers/auth_controller.dart';
 import 'package:jimpact/features/groups/views/open_group_view.dart';
 import 'package:jimpact/features/profile/views/edit_profile_view.dart';
+import 'package:jimpact/models/user/user_model.dart';
 import 'package:jimpact/theme/palette.dart';
 import 'package:jimpact/utils/app_constants.dart';
 import 'package:jimpact/utils/app_extensions.dart';
@@ -9,18 +12,19 @@ import 'package:jimpact/utils/nav.dart';
 import 'package:jimpact/utils/widgets/button.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
-class ProfileView extends StatefulWidget {
+class ProfileView extends ConsumerStatefulWidget {
   const ProfileView({super.key});
 
   @override
-  State<ProfileView> createState() => _ProfileViewState();
+  ConsumerState<ProfileView> createState() => _ProfileViewState();
 }
 
-class _ProfileViewState extends State<ProfileView>
+class _ProfileViewState extends ConsumerState<ProfileView>
     with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     TabController tabController = TabController(length: 2, vsync: this);
+    UserModel user = ref.watch(userProvider)!;
     return SizedBox(
       height: height(context),
       width: width(context),
@@ -45,13 +49,13 @@ class _ProfileViewState extends State<ProfileView>
                   16.sbH,
 
                   //! user name
-                  '@starcytray'.txt(
+                  '@${user.userName}'.txt(
                     size: 20.sp,
                     fontWeightType: TxtFntWt.med,
                     colorType: TxtClrType.g41,
                   ),
                   4.sbH,
-                  'Tracy Chapman'.txt14(
+                  '${user.firstName} ${user.lastName}'.txt14(
                     color: Pallete.greyA7,
                   ),
                   16.sbH,
