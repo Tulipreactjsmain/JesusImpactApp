@@ -5,14 +5,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jimpact/features/blogs/providers/blog_providers.dart';
 import 'package:jimpact/features/blogs/views/blogs_view.dart';
 import 'package:jimpact/features/blogs/widgets/blog_card.dart';
+import 'package:jimpact/features/blogs/widgets/create_blog_pop_up.dart';
 import 'package:jimpact/features/groups/views/open_group_view.dart';
 import 'package:jimpact/features/home/widgets/search_bar.dart';
 import 'package:jimpact/models/blogs/blog_model.dart';
+import 'package:jimpact/theme/palette.dart';
 import 'package:jimpact/utils/nav.dart';
 import 'package:jimpact/utils/widgets/button.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
-import 'package:jimpact/theme/palette.dart';
 import 'package:jimpact/utils/app_constants.dart';
 import 'package:jimpact/utils/app_extensions.dart';
 
@@ -39,7 +40,7 @@ class HomeFeedView extends ConsumerWidget {
                 children: [
                   Container(
                     padding: EdgeInsets.only(top: 150.h, bottom: 30.h),
-                    color: Pallete.textInputFillGreyEE,
+                    color: Palette.textInputFillGreyEE,
                     child: Column(
                       children: [
                         //! popular roww
@@ -155,13 +156,13 @@ class HomeFeedView extends ConsumerWidget {
                         'Open Groups'.txt(
                           size: 17.sp,
                           fontWeightType: TxtFntWt.med,
-                          color: Pallete.greyA7,
+                          color: Palette.greyA7,
                         ),
                         'View All'
                             .txt(
                           size: 17.sp,
                           fontWeightType: TxtFntWt.med,
-                          color: Pallete.redColor,
+                          color: Palette.redColor,
                         )
                             .tap(onTap: () {
                           goTo(context: context, view: const OpenGroupsView());
@@ -188,7 +189,7 @@ class HomeFeedView extends ConsumerWidget {
                           width: 170.w,
                           margin: EdgeInsets.only(right: 16.w),
                           decoration: BoxDecoration(
-                            color: Pallete.blackColor,
+                            color: Palette.blackColor,
                             borderRadius: BorderRadius.circular(15.r),
                           ),
                           child: Stack(
@@ -196,7 +197,7 @@ class HomeFeedView extends ConsumerWidget {
                               const Padding(
                                 padding: EdgeInsets.all(8.0),
                                 child: Placeholder(
-                                  color: Pallete.textInputFillGreyEE,
+                                  color: Palette.textInputFillGreyEE,
                                 ),
                               ),
                               Container(
@@ -227,19 +228,19 @@ class HomeFeedView extends ConsumerWidget {
                                       children: [
                                         'For Her'.txt16(
                                           fontWeightType: TxtFntWt.med,
-                                          color: Pallete.whiteColor,
+                                          color: Palette.whiteColor,
                                         ),
                                         3.sbH,
                                         Row(
                                           children: [
                                             Icon(PhosphorIcons.userFill,
                                                 size: 14.sp,
-                                                color: Pallete.whiteColor),
+                                                color: Palette.whiteColor),
                                             6.6.sbW,
                                             '12 Members'.txt(
                                                 size: 14.sp,
                                                 fontWeight: FontWeight.w300,
-                                                color: Pallete.whiteColor),
+                                                color: Palette.whiteColor),
                                             5.sbW,
                                           ],
                                         ),
@@ -252,7 +253,7 @@ class HomeFeedView extends ConsumerWidget {
                                           isText: false,
                                           item: 'Join'.txt(
                                               size: 15.sp,
-                                              color: Pallete.whiteColor),
+                                              color: Palette.whiteColor),
                                         ),
                                         22.sbH,
                                       ],
@@ -278,13 +279,13 @@ class HomeFeedView extends ConsumerWidget {
                         'Closed Groups'.txt(
                           size: 17.sp,
                           fontWeightType: TxtFntWt.med,
-                          color: Pallete.greyA7,
+                          color: Palette.greyA7,
                         ),
                         'View All'
                             .txt(
                           size: 17.sp,
                           fontWeightType: TxtFntWt.med,
-                          color: Pallete.redColor,
+                          color: Palette.redColor,
                         )
                             .tap(onTap: () {
                           goTo(context: context, view: const OpenGroupsView());
@@ -311,7 +312,7 @@ class HomeFeedView extends ConsumerWidget {
                           width: 170.w,
                           margin: EdgeInsets.only(right: 16.w),
                           decoration: BoxDecoration(
-                            color: Pallete.blackColor,
+                            color: Palette.blackColor,
                             borderRadius: BorderRadius.circular(15.r),
                           ),
                           child: Stack(
@@ -319,7 +320,7 @@ class HomeFeedView extends ConsumerWidget {
                               const Padding(
                                 padding: EdgeInsets.all(8.0),
                                 child: Placeholder(
-                                  color: Pallete.textInputFillGreyEE,
+                                  color: Palette.textInputFillGreyEE,
                                 ),
                               ),
                               Container(
@@ -350,19 +351,19 @@ class HomeFeedView extends ConsumerWidget {
                                       children: [
                                         'For Her'.txt16(
                                           fontWeightType: TxtFntWt.med,
-                                          color: Pallete.whiteColor,
+                                          color: Palette.whiteColor,
                                         ),
                                         3.sbH,
                                         Row(
                                           children: [
                                             Icon(PhosphorIcons.userFill,
                                                 size: 14.sp,
-                                                color: Pallete.whiteColor),
+                                                color: Palette.whiteColor),
                                             6.6.sbW,
                                             '12 Members'.txt(
                                                 size: 14.sp,
                                                 fontWeight: FontWeight.w300,
-                                                color: Pallete.whiteColor),
+                                                color: Palette.whiteColor),
                                             5.sbW,
                                           ],
                                         ),
@@ -375,7 +376,7 @@ class HomeFeedView extends ConsumerWidget {
                                           isText: false,
                                           item: 'Join'.txt(
                                               size: 15.sp,
-                                              color: Pallete.whiteColor),
+                                              color: Palette.whiteColor),
                                         ),
                                         22.sbH,
                                       ],
@@ -410,7 +411,7 @@ class HomeFeedView extends ConsumerWidget {
                   height: 31.h,
                   width: 31.h,
                   decoration: BoxDecoration(
-                      color: Pallete.redColor,
+                      color: Palette.redColor,
                       borderRadius: BorderRadius.circular(7.r)),
                 ),
 
@@ -419,17 +420,35 @@ class HomeFeedView extends ConsumerWidget {
                   children: [
                     CircleAvatar(
                       radius: 13.h,
-                      backgroundColor: Pallete.redColor,
+                      backgroundColor: Palette.redColor,
                       child: Icon(
                         PhosphorIcons.plusBold,
                         size: 20.sp,
-                        color: Pallete.whiteColor,
+                        color: Palette.whiteColor,
                       ),
-                    ),
+                    ).tap(onTap: () {
+                      showGeneralDialog(
+                        context: context,
+                        //! SHADOW EFFECT
+                        barrierColor: Palette.blackColor.withOpacity(0.2),
+                        transitionBuilder: (context, a1, a2, widgett) =>
+                            CreateBlogPopup(
+                          a1: a1,
+                          a2: a2,
+                        ),
+
+                        //! ANIMATION DURATION
+                        transitionDuration: const Duration(milliseconds: 200),
+
+                        //! STILL DON'T KNOW WHAT THIS DOES, BUT IT'S REQUIRED
+                        pageBuilder: (context, animation1, animation2) =>
+                            const Text(""),
+                      );
+                    }),
                     42.sbW,
                     const Icon(
                       PhosphorIcons.listBold,
-                      color: Pallete.textBlack54,
+                      color: Palette.textBlack54,
                     )
                   ],
                 )

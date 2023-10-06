@@ -64,7 +64,7 @@ class _CreateAccountViewState extends ConsumerState<CreateAccountView> {
             elevation: 0,
             surfaceTintColor: Colors.transparent,
             backgroundColor: Colors.transparent,
-            foregroundColor: Pallete.textBlack54,
+            foregroundColor: Palette.textBlack54,
           ),
           body: SizedBox(
             height: height(context),
@@ -102,7 +102,7 @@ class _CreateAccountViewState extends ConsumerState<CreateAccountView> {
                         style: GoogleFonts.poppins(
                           textStyle: TextStyle(
                             fontSize: 16.sp,
-                            color: Pallete.textGrey70,
+                            color: Palette.textGrey70,
                           ),
                         ),
                         children: [
@@ -114,7 +114,7 @@ class _CreateAccountViewState extends ConsumerState<CreateAccountView> {
                               },
                             text: 'Sign in',
                             style: TextStyle(
-                              color: Pallete.redColor,
+                              color: Palette.redColor,
                               fontSize: 16.sp,
                               fontWeight: FontWeight.w600,
                             ),
@@ -165,7 +165,7 @@ class _CreateAccountViewState extends ConsumerState<CreateAccountView> {
                             icon: 'showpassword',
                             height: 15.h,
                             color: isPasswordInvisible.value == false
-                                ? Pallete.redColor
+                                ? Palette.redColor
                                 : null,
                           ),
                         ).tap(onTap: passwordVisibility),
@@ -199,7 +199,7 @@ class _CreateAccountViewState extends ConsumerState<CreateAccountView> {
                           width: 20.w,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(7.r),
-                            color: Pallete.textInputFillGreyEE,
+                            color: Palette.textInputFillGreyEE,
                           ),
                         ),
                         12.sbW,
@@ -209,7 +209,7 @@ class _CreateAccountViewState extends ConsumerState<CreateAccountView> {
                             style: GoogleFonts.poppins(
                               textStyle: TextStyle(
                                 fontSize: 16.sp,
-                                color: Pallete.textGrey70,
+                                color: Palette.textGrey70,
                               ),
                             ),
                             children: [
@@ -218,7 +218,7 @@ class _CreateAccountViewState extends ConsumerState<CreateAccountView> {
                                   ..onTap = () {},
                                 text: 'Terms of Service',
                                 style: TextStyle(
-                                  color: Pallete.redColor,
+                                  color: Palette.redColor,
                                   fontSize: 16.sp,
                                   fontWeight: FontWeight.w600,
                                 ),
@@ -228,7 +228,7 @@ class _CreateAccountViewState extends ConsumerState<CreateAccountView> {
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(
                                     fontSize: 16.sp,
-                                    color: Pallete.textGrey70,
+                                    color: Palette.textGrey70,
                                   ),
                                 ),
                               ),
@@ -237,7 +237,7 @@ class _CreateAccountViewState extends ConsumerState<CreateAccountView> {
                                   ..onTap = () {},
                                 text: 'Privacy Policy',
                                 style: TextStyle(
-                                  color: Pallete.redColor,
+                                  color: Palette.redColor,
                                   fontSize: 16.sp,
                                   fontWeight: FontWeight.w600,
                                 ),
@@ -254,7 +254,7 @@ class _CreateAccountViewState extends ConsumerState<CreateAccountView> {
                             height: 50.h,
                             child: const Center(
                                 child: CircularProgressIndicator(
-                              color: Pallete.redColor,
+                              color: Palette.redColor,
                             )),
                           )
                         : ArrowButton(

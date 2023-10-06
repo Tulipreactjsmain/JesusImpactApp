@@ -32,8 +32,8 @@ class NavBarWidget extends ConsumerWidget {
             color: nav.index == 2
                 ? Colors.transparent
                 : switch (indexFromController == nav.index) {
-                    true => Pallete.redColor,
-                    false => Pallete.greyA7,
+                    true => Palette.redColor,
+                    false => Palette.greyA7,
                   },
           ),
 

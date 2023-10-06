@@ -15,7 +15,7 @@ class TopBlogCard extends StatelessWidget {
       height: 370.h,
       width: 400.w,
       decoration: BoxDecoration(
-        color: Pallete.blackColor,
+        color: Palette.blackColor,
         borderRadius: BorderRadius.circular(15.r),
       ),
       child: Stack(
@@ -23,7 +23,7 @@ class TopBlogCard extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.all(8.0),
             child: Placeholder(
-              color: Pallete.textInputFillGreyEE,
+              color: Palette.textInputFillGreyEE,
             ),
           ),
           Container(
@@ -73,17 +73,17 @@ class TopBlogCard extends StatelessWidget {
                         'Jesus Impact'.txt(
                             size: 10.sp,
                             fontWeightType: TxtFntWt.med,
-                            color: Pallete.redColor),
+                            color: Palette.redColor),
                         Row(
                           children: [
                             '12'.txt(
                               size: 12.sp,
                               fontWeightType: TxtFntWt.med,
-                              color: Pallete.redColor,
+                              color: Palette.redColor,
                             ),
                             5.sbW,
                             Icon(PhosphorIcons.userFill,
-                                size: 14.sp, color: Pallete.redColor),
+                                size: 14.sp, color: Palette.redColor),
                           ],
                         ),
                       ],

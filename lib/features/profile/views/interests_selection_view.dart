@@ -36,7 +36,7 @@ class _InterestsSelectionViewState
               30.sbH,
               'Welcome Broski'
                   .txt18(
-                    color: Pallete.redColor,
+                    color: Palette.redColor,
                     fontWeightType: TxtFntWt.med,
                   )
                   .alignCenterLeft(),

@@ -66,13 +66,13 @@ class ExploreConnectedGroupsView extends ConsumerWidget {
                         'Open Groups'.txt(
                           size: 17.sp,
                           fontWeightType: TxtFntWt.med,
-                          color: Pallete.greyA7,
+                          color: Palette.greyA7,
                         ),
                         'View All'
                             .txt(
                           size: 17.sp,
                           fontWeightType: TxtFntWt.med,
-                          color: Pallete.redColor,
+                          color: Palette.redColor,
                         )
                             .tap(onTap: () {
                           goTo(context: context, view: const OpenGroupsView());
@@ -99,7 +99,7 @@ class ExploreConnectedGroupsView extends ConsumerWidget {
                           width: 170.w,
                           margin: EdgeInsets.only(right: 16.w),
                           decoration: BoxDecoration(
-                            color: Pallete.blackColor,
+                            color: Palette.blackColor,
                             borderRadius: BorderRadius.circular(15.r),
                           ),
                           child: Stack(
@@ -107,7 +107,7 @@ class ExploreConnectedGroupsView extends ConsumerWidget {
                               const Padding(
                                 padding: EdgeInsets.all(8.0),
                                 child: Placeholder(
-                                  color: Pallete.textInputFillGreyEE,
+                                  color: Palette.textInputFillGreyEE,
                                 ),
                               ),
                               Container(
@@ -138,19 +138,19 @@ class ExploreConnectedGroupsView extends ConsumerWidget {
                                       children: [
                                         'For Her'.txt16(
                                           fontWeightType: TxtFntWt.med,
-                                          color: Pallete.whiteColor,
+                                          color: Palette.whiteColor,
                                         ),
                                         3.sbH,
                                         Row(
                                           children: [
                                             Icon(PhosphorIcons.userFill,
                                                 size: 14.sp,
-                                                color: Pallete.whiteColor),
+                                                color: Palette.whiteColor),
                                             6.6.sbW,
                                             '12 Members'.txt(
                                                 size: 14.sp,
                                                 fontWeight: FontWeight.w300,
-                                                color: Pallete.whiteColor),
+                                                color: Palette.whiteColor),
                                             5.sbW,
                                           ],
                                         ),
@@ -163,7 +163,7 @@ class ExploreConnectedGroupsView extends ConsumerWidget {
                                           isText: false,
                                           item: 'Join'.txt(
                                               size: 15.sp,
-                                              color: Pallete.whiteColor),
+                                              color: Palette.whiteColor),
                                         ),
                                         22.sbH,
                                       ],
@@ -189,13 +189,13 @@ class ExploreConnectedGroupsView extends ConsumerWidget {
                         'Closed Groups'.txt(
                           size: 17.sp,
                           fontWeightType: TxtFntWt.med,
-                          color: Pallete.greyA7,
+                          color: Palette.greyA7,
                         ),
                         'View All'
                             .txt(
                           size: 17.sp,
                           fontWeightType: TxtFntWt.med,
-                          color: Pallete.redColor,
+                          color: Palette.redColor,
                         )
                             .tap(onTap: () {
                           goTo(context: context, view: const OpenGroupsView());
@@ -222,7 +222,7 @@ class ExploreConnectedGroupsView extends ConsumerWidget {
                           width: 170.w,
                           margin: EdgeInsets.only(right: 16.w),
                           decoration: BoxDecoration(
-                            color: Pallete.blackColor,
+                            color: Palette.blackColor,
                             borderRadius: BorderRadius.circular(15.r),
                           ),
                           child: Stack(
@@ -230,7 +230,7 @@ class ExploreConnectedGroupsView extends ConsumerWidget {
                               const Padding(
                                 padding: EdgeInsets.all(8.0),
                                 child: Placeholder(
-                                  color: Pallete.textInputFillGreyEE,
+                                  color: Palette.textInputFillGreyEE,
                                 ),
                               ),
                               Container(
@@ -261,19 +261,19 @@ class ExploreConnectedGroupsView extends ConsumerWidget {
                                       children: [
                                         'For Her'.txt16(
                                           fontWeightType: TxtFntWt.med,
-                                          color: Pallete.whiteColor,
+                                          color: Palette.whiteColor,
                                         ),
                                         3.sbH,
                                         Row(
                                           children: [
                                             Icon(PhosphorIcons.userFill,
                                                 size: 14.sp,
-                                                color: Pallete.whiteColor),
+                                                color: Palette.whiteColor),
                                             6.6.sbW,
                                             '12 Members'.txt(
                                                 size: 14.sp,
                                                 fontWeight: FontWeight.w300,
-                                                color: Pallete.whiteColor),
+                                                color: Palette.whiteColor),
                                             5.sbW,
                                           ],
                                         ),
@@ -286,7 +286,7 @@ class ExploreConnectedGroupsView extends ConsumerWidget {
                                           isText: false,
                                           item: 'Join'.txt(
                                               size: 15.sp,
-                                              color: Pallete.whiteColor),
+                                              color: Palette.whiteColor),
                                         ),
                                         22.sbH,
                                       ],
@@ -321,7 +321,7 @@ class ExploreConnectedGroupsView extends ConsumerWidget {
                   height: 31.h,
                   width: 31.h,
                   decoration: BoxDecoration(
-                      color: Pallete.redColor,
+                      color: Palette.redColor,
                       borderRadius: BorderRadius.circular(7.r)),
                 ),
 
@@ -330,17 +330,17 @@ class ExploreConnectedGroupsView extends ConsumerWidget {
                   children: [
                     CircleAvatar(
                       radius: 13.h,
-                      backgroundColor: Pallete.redColor,
+                      backgroundColor: Palette.redColor,
                       child: Icon(
                         PhosphorIcons.plusBold,
                         size: 20.sp,
-                        color: Pallete.whiteColor,
+                        color: Palette.whiteColor,
                       ),
                     ),
                     42.sbW,
                     const Icon(
                       PhosphorIcons.listBold,
-                      color: Pallete.textBlack54,
+                      color: Palette.textBlack54,
                     )
                   ],
                 )

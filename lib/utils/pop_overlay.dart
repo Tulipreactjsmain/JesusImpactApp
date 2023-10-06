@@ -86,7 +86,7 @@ class PopUpOverLayWidget extends ConsumerWidget {
               vertical: 50.h,
             ),
             decoration: BoxDecoration(
-              color: Pallete.whiteColor,
+              color: Palette.whiteColor,
               borderRadius: BorderRadius.circular(25.r),
               boxShadow: [
                 BoxShadow(

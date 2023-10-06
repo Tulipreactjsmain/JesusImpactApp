@@ -14,7 +14,7 @@ import 'package:jimpact/theme/palette.dart';
 //   Widget build(BuildContext context) {
 //     return Center(
 //       child: LoadingAnimationWidget.halfTriangleDot(
-//         color: Pallete.whiteColor,
+//         color: Palette.whiteColor,
 //         size: 60.w,
 //       ),
 //     );
@@ -32,10 +32,10 @@ class Loader extends ConsumerWidget {
         height: 60.h,
         width: 60.h,
         // child: CircularProgressIndicator(
-        //   color: Pallete.blueColor,
+        //   color: Palette.blueColor,
         // ),
         child: LoadingAnimationWidget.inkDrop(
-          color: Pallete.blackColor,
+          color: Palette.blackColor,
           size: 60.h,
         ),
       ),

@@ -94,7 +94,7 @@ class TextInputWidget extends StatelessWidget {
           style: GoogleFonts.poppins(
             textStyle: TextStyle(
               fontSize: 18.sp,
-              color: Pallete.textBlack54,
+              color: Palette.textBlack54,
               fontWeight: FontWeight.w500,
             ),
           ),
@@ -116,32 +116,32 @@ class TextInputWidget extends StatelessWidget {
             suffixIconConstraints:
                 BoxConstraints(minHeight: 20.h, minWidth: 20.w),
             hintText: hintText,
-            fillColor: Pallete.textInputFillGreyEE,
+            fillColor: Palette.textInputFillGreyEE,
             filled: true,
             hintStyle: GoogleFonts.poppins(
               textStyle: TextStyle(
                 fontSize: 18.sp,
-                color: Pallete.textGrey78,
+                color: Palette.textGrey78,
               ),
             ),
             border: OutlineInputBorder(
-              borderSide: const BorderSide(color: Pallete.textInputFillGreyEE),
+              borderSide: const BorderSide(color: Palette.textInputFillGreyEE),
               borderRadius: BorderRadius.circular(12.r),
             ),
             enabledBorder: OutlineInputBorder(
-              borderSide: const BorderSide(color: Pallete.textInputFillGreyEE),
+              borderSide: const BorderSide(color: Palette.textInputFillGreyEE),
               borderRadius: BorderRadius.circular(12.r),
             ),
             focusedBorder: OutlineInputBorder(
-              borderSide: const BorderSide(color: Pallete.textInputFillGreyEE),
+              borderSide: const BorderSide(color: Palette.textInputFillGreyEE),
               borderRadius: BorderRadius.circular(12.r),
             ),
             errorBorder: OutlineInputBorder(
-              borderSide: const BorderSide(color: Pallete.redColor),
+              borderSide: const BorderSide(color: Palette.redColor),
               borderRadius: BorderRadius.circular(12.r),
             ),
             focusedErrorBorder: OutlineInputBorder(
-              borderSide: const BorderSide(color: Pallete.textInputFillGreyEE),
+              borderSide: const BorderSide(color: Palette.textInputFillGreyEE),
               borderRadius: BorderRadius.circular(12.r),
             ),
           ),
@@ -218,7 +218,7 @@ class TextInputWidget2 extends StatelessWidget {
             Text(
               inputTitle,
               style: TextStyle(
-                  color: titleColor ?? Pallete.blackColor,
+                  color: titleColor ?? Palette.blackColor,
                   fontSize: 14.sp,
                   fontWeight: titleFontWeight ?? FontWeight.w500),
             ),
@@ -258,19 +258,19 @@ class TextInputWidget2 extends StatelessWidget {
                   hintStyle: TextStyle(
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w400,
-                    color: Pallete.greyColor,
+                    color: Palette.greyColor,
                     fontFamily: AppTexts.appFont,
                   ),
                   border: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Pallete.greyColor),
+                    borderSide: const BorderSide(color: Palette.greyColor),
                     borderRadius: BorderRadius.circular(8.r),
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Pallete.greyColor),
+                    borderSide: const BorderSide(color: Palette.greyColor),
                     borderRadius: BorderRadius.circular(8.r),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Pallete.greyColor),
+                    borderSide: const BorderSide(color: Palette.greyColor),
                     borderRadius: BorderRadius.circular(8.r),
                   ),
                   errorBorder: OutlineInputBorder(
@@ -278,7 +278,7 @@ class TextInputWidget2 extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8.r),
                   ),
                   focusedErrorBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Pallete.greyColor),
+                    borderSide: const BorderSide(color: Palette.greyColor),
                     borderRadius: BorderRadius.circular(8.r),
                   ),
                 ),
@@ -382,19 +382,19 @@ class NewTextInput extends ConsumerWidget {
           hintStyle: TextStyle(
             fontSize: 14.sp,
             fontWeight: FontWeight.w500,
-            color: Pallete.greyColor,
+            color: Palette.greyColor,
             fontFamily: AppTexts.appFont,
           ),
           border: OutlineInputBorder(
-            borderSide: const BorderSide(color: Pallete.greyColor),
+            borderSide: const BorderSide(color: Palette.greyColor),
             borderRadius: BorderRadius.circular(8.r),
           ),
           enabledBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: Pallete.greyColor),
+            borderSide: const BorderSide(color: Palette.greyColor),
             borderRadius: BorderRadius.circular(8.r),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: Pallete.greyColor),
+            borderSide: const BorderSide(color: Palette.greyColor),
             borderRadius: BorderRadius.circular(8.r),
           ),
           errorBorder: OutlineInputBorder(
@@ -402,7 +402,7 @@ class NewTextInput extends ConsumerWidget {
             borderRadius: BorderRadius.circular(8.r),
           ),
           focusedErrorBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: Pallete.greyColor),
+            borderSide: const BorderSide(color: Palette.greyColor),
             borderRadius: BorderRadius.circular(8.r),
           ),
         ),

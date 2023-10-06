@@ -23,18 +23,15 @@ class BlogCardd extends StatelessWidget {
         height: 290.h,
         width: 180.w,
         decoration: BoxDecoration(
-          color: Pallete.whiteColor,
+          color: Palette.whiteColor,
           borderRadius: BorderRadius.circular(15.r),
         ),
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ImageLoader(
-                height: 124.h,
-                width: double.infinity,
-                imageUrl: blog.images!,
-              ),
+            ImageLoader(
+              height: 124.h,
+              width: double.infinity,
+              imageUrl: blog.images!,
             ),
             16.sbH,
 
@@ -78,10 +75,10 @@ class BlogCardd extends StatelessWidget {
                           blog.views!.length.toString().txt(
                               size: 12.sp,
                               fontWeightType: TxtFntWt.med,
-                              color: Pallete.redColor),
+                              color: Palette.redColor),
                           5.sbW,
                           Icon(PhosphorIcons.userFill,
-                              size: 14.sp, color: Pallete.redColor),
+                              size: 14.sp, color: Palette.redColor),
                         ],
                       ),
                     ],
@@ -110,7 +107,7 @@ class BlogCard extends StatelessWidget {
         height: 290.h,
         width: 180.w,
         decoration: BoxDecoration(
-          color: Pallete.whiteColor,
+          color: Palette.whiteColor,
           borderRadius: BorderRadius.circular(15.r),
         ),
         child: Column(
@@ -119,7 +116,7 @@ class BlogCard extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Placeholder(
                 fallbackHeight: 124.h,
-                color: Pallete.textInputFillGreyEE,
+                color: Palette.textInputFillGreyEE,
               ),
             ),
             16.sbH,
@@ -159,10 +156,10 @@ class BlogCard extends StatelessWidget {
                           '12'.txt(
                               size: 12.sp,
                               fontWeightType: TxtFntWt.med,
-                              color: Pallete.redColor),
+                              color: Palette.redColor),
                           5.sbW,
                           Icon(PhosphorIcons.userFill,
-                              size: 14.sp, color: Pallete.redColor),
+                              size: 14.sp, color: Palette.redColor),
                         ],
                       ),
                     ],
@@ -193,7 +190,7 @@ class BlogCardSkeleton extends StatelessWidget {
             height: 290.h,
             width: 180.w,
             decoration: BoxDecoration(
-              color: Pallete.whiteColor,
+              color: Palette.whiteColor,
               borderRadius: BorderRadius.circular(15.r),
             ),
             child: Column(
@@ -202,7 +199,7 @@ class BlogCardSkeleton extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
                     decoration: BoxDecoration(
-                        color: Pallete.textInputFillGreyEE,
+                        color: Palette.textInputFillGreyEE,
                         borderRadius: BorderRadius.circular(7.r)),
                     height: 124.h,
                   ),
@@ -244,10 +241,10 @@ class BlogCardSkeleton extends StatelessWidget {
                               '12'.txt(
                                   size: 12.sp,
                                   fontWeightType: TxtFntWt.med,
-                                  color: Pallete.redColor),
+                                  color: Palette.redColor),
                               5.sbW,
                               Icon(PhosphorIcons.userFill,
-                                  size: 14.sp, color: Pallete.redColor),
+                                  size: 14.sp, color: Palette.redColor),
                             ],
                           ),
                         ],

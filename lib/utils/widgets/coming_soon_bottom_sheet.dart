@@ -15,7 +15,7 @@ class ComingSoonBottomSheet extends StatelessWidget {
       height: 200.h,
       width: width(context),
       decoration: BoxDecoration(
-        color: Pallete.whiteColor,
+        color: Palette.whiteColor,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(20.r),
           topRight: Radius.circular(20.r),
@@ -29,7 +29,7 @@ class ComingSoonBottomSheet extends StatelessWidget {
             width: 60.w,
             height: 4.h,
             decoration: ShapeDecoration(
-              color: Pallete.descriptionGrey,
+              color: Palette.descriptionGrey,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(4)),
             ),
@@ -39,7 +39,7 @@ class ComingSoonBottomSheet extends StatelessWidget {
           'Coming soon...'.txtHeading(fontWeight: FontWeight.w600, size: 16.sp),
 
           27.sbH,
-          'bengz'.png.myImage(height: 100.w, color: Pallete.redColor),
+          'bengz'.png.myImage(height: 100.w, color: Palette.redColor),
         ],
       ),
     );

@@ -19,7 +19,7 @@ class _FAQsViewState extends ConsumerState<FAQsView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Pallete.bgGreyFB,
+      backgroundColor: Palette.bgGreyFB,
       appBar: customAppBar('', context: context),
       body: SingleChildScrollView(
         child: Padding(
@@ -49,7 +49,7 @@ class _FAQsViewState extends ConsumerState<FAQsView> {
                       padding: EdgeInsets.all(20.w),
                       margin: EdgeInsets.only(bottom: 37.h),
                       decoration: BoxDecoration(
-                        color: Pallete.textInputFillGreyEE,
+                        color: Palette.textInputFillGreyEE,
                         borderRadius: BorderRadius.circular(12.r),
                       ),
                       child: SingleChildScrollView(
@@ -62,8 +62,8 @@ class _FAQsViewState extends ConsumerState<FAQsView> {
                                 'How do I join a Group?'.txt(
                                   size: 20.sp,
                                   color: openIndex.value == index
-                                      ? Pallete.redColor
-                                      : Pallete.textBlack54,
+                                      ? Palette.redColor
+                                      : Palette.textBlack54,
                                 ),
                                 Icon(openIndex.value == index
                                     ? Icons.keyboard_arrow_up

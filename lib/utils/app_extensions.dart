@@ -69,10 +69,10 @@ extension StyledTextExtension on String {
             height: height,
             fontSize: size ?? 14.sp,
             color: switch (colorType) {
-              TxtClrType.g54 => Pallete.textBlack54,
-              TxtClrType.g41 => Pallete.textGrey41,
-              TxtClrType.g70 => Pallete.textGrey70,
-              TxtClrType.g78 => Pallete.textGrey78,
+              TxtClrType.g54 => Palette.textBlack54,
+              TxtClrType.g41 => Palette.textGrey41,
+              TxtClrType.g70 => Palette.textGrey70,
+              TxtClrType.g78 => Palette.textGrey78,
               _ => color,
             },
             fontWeight: switch (fontWeightType) {
@@ -142,10 +142,10 @@ extension StyledTextExtension14 on String {
           height: height,
           fontSize: 16.sp,
           color: switch (colorType) {
-            TxtClrType.g54 => Pallete.textBlack54,
-            TxtClrType.g41 => Pallete.textGrey41,
-            TxtClrType.g70 => Pallete.textGrey70,
-            TxtClrType.g78 => Pallete.textGrey78,
+            TxtClrType.g54 => Palette.textBlack54,
+            TxtClrType.g41 => Palette.textGrey41,
+            TxtClrType.g70 => Palette.textGrey70,
+            TxtClrType.g78 => Palette.textGrey78,
             _ => color,
           },
           fontWeight: switch (fontWeightType) {
@@ -187,10 +187,10 @@ extension StyledTextExtension12 on String {
           height: height,
           fontSize: 14.sp,
           color: switch (colorType) {
-            TxtClrType.g54 => Pallete.textBlack54,
-            TxtClrType.g41 => Pallete.textGrey41,
-            TxtClrType.g70 => Pallete.textGrey70,
-            TxtClrType.g78 => Pallete.textGrey78,
+            TxtClrType.g54 => Palette.textBlack54,
+            TxtClrType.g41 => Palette.textGrey41,
+            TxtClrType.g70 => Palette.textGrey70,
+            TxtClrType.g78 => Palette.textGrey78,
             _ => color,
           },
           fontWeight: switch (fontWeightType) {
@@ -232,10 +232,10 @@ extension StyledTextExtension16 on String {
           height: height,
           fontSize: 18.sp,
           color: switch (colorType) {
-            TxtClrType.g54 => Pallete.textBlack54,
-            TxtClrType.g41 => Pallete.textGrey41,
-            TxtClrType.g70 => Pallete.textGrey70,
-            TxtClrType.g78 => Pallete.textGrey78,
+            TxtClrType.g54 => Palette.textBlack54,
+            TxtClrType.g41 => Palette.textGrey41,
+            TxtClrType.g70 => Palette.textGrey70,
+            TxtClrType.g78 => Palette.textGrey78,
             _ => color,
           },
           fontWeight: switch (fontWeightType) {
@@ -275,10 +275,10 @@ extension StyledTextExtension18 on String {
         textStyle: TextStyle(
           fontSize: 20.sp,
           color: switch (colorType) {
-            TxtClrType.g54 => Pallete.textBlack54,
-            TxtClrType.g41 => Pallete.textGrey41,
-            TxtClrType.g70 => Pallete.textGrey70,
-            TxtClrType.g78 => Pallete.textGrey78,
+            TxtClrType.g54 => Palette.textBlack54,
+            TxtClrType.g41 => Palette.textGrey41,
+            TxtClrType.g70 => Palette.textGrey70,
+            TxtClrType.g78 => Palette.textGrey78,
             _ => color,
           },
           fontWeight: switch (fontWeightType) {
@@ -318,10 +318,10 @@ extension StyledTextExtension24 on String {
         textStyle: TextStyle(
           fontSize: 26.sp,
           color: switch (colorType) {
-            TxtClrType.g54 => Pallete.textBlack54,
-            TxtClrType.g41 => Pallete.textGrey41,
-            TxtClrType.g70 => Pallete.textGrey70,
-            TxtClrType.g78 => Pallete.textGrey78,
+            TxtClrType.g54 => Palette.textBlack54,
+            TxtClrType.g41 => Palette.textGrey41,
+            TxtClrType.g70 => Palette.textGrey70,
+            TxtClrType.g78 => Palette.textGrey78,
             _ => color,
           },
           fontWeight: switch (fontWeightType) {

@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:jimpact/cache/token_cache.dart';
 import 'package:jimpact/features/auth/repositories/auth_repository.dart';
-import 'package:jimpact/features/base_nav/wrapper/base_nav_wrapper.dart';
+import 'package:jimpact/features/profile/views/interests_selection_view.dart';
 import 'package:jimpact/models/tokens/token_model.dart';
 import 'package:jimpact/models/user/user_model.dart';
 import 'package:jimpact/utils/app_extensions.dart';
@@ -101,7 +101,7 @@ class AuthController extends StateNotifier<bool> {
       (String result) {
         result.log();
         goTo(
-          view: const BaseNavWrapper(),
+          view: const InterestsSelectionView(),
           context: context,
         );
       },

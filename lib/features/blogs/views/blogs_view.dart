@@ -16,7 +16,7 @@ class BlogsView extends ConsumerWidget {
     return DefaultTabController(
       length: 6,
       child: Scaffold(
-        backgroundColor: Pallete.bgGreyFB,
+        backgroundColor: Palette.bgGreyFB,
         appBar: customAppBar('Blogs', context: context),
         body: Column(
           children: [
@@ -31,11 +31,11 @@ class BlogsView extends ConsumerWidget {
                   border: Border(
                       bottom: BorderSide(
                     width: 3,
-                    color: Pallete.redColor,
+                    color: Palette.redColor,
                   )),
                 ),
-                labelColor: Pallete.blackColor,
-                unselectedLabelColor: Pallete.blackColor,
+                labelColor: Palette.blackColor,
+                unselectedLabelColor: Palette.blackColor,
                 labelStyle: GoogleFonts.poppins(
                   textStyle: TextStyle(
                     color: const Color(0xFF545454),

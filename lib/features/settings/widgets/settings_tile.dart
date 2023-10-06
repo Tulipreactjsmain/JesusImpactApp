@@ -39,7 +39,7 @@ class SettingsTile extends StatelessWidget {
           const Spacer(),
           const Icon(
             Icons.keyboard_arrow_right,
-            color: Pallete.redColor,
+            color: Palette.redColor,
           ),
         ],
       ),

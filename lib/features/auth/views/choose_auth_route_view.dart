@@ -54,7 +54,7 @@ class ChooseAuthRouteView extends ConsumerWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           AppTexts.signIn.txt18(
-                            color: Pallete.redColor,
+                            color: Palette.redColor,
                             fontWeight: FontWeight.w500,
                           ),
                           20.sbW,
@@ -83,7 +83,7 @@ class ChooseAuthRouteView extends ConsumerWidget {
                 //     children: List.generate(
                 //       3,
                 //       (index) => CircleAvatar(
-                //         backgroundColor: Pallete.textInputFillGreyEE,
+                //         backgroundColor: Palette.textInputFillGreyEE,
                 //         child: Container(
                 //             padding: const EdgeInsets.all(9),
                 //             child: switch (index) {

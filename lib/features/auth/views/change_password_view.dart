@@ -44,7 +44,7 @@ class _ChangePasswordViewState extends ConsumerState<ChangePasswordView> {
   Widget build(BuildContext context) {
     bool isProfileLoading = ref.watch(profileControllerProvider);
     return Scaffold(
-      backgroundColor: Pallete.bgGreyFB,
+      backgroundColor: Palette.bgGreyFB,
       appBar: customAppBar('', context: context),
       body: SingleChildScrollView(
         child: Padding(
@@ -75,7 +75,7 @@ class _ChangePasswordViewState extends ConsumerState<ChangePasswordView> {
                       icon: 'showpassword',
                       height: 15.h,
                       color: isPasswordInvisible.value == false
-                          ? Pallete.redColor
+                          ? Palette.redColor
                           : null,
                     ),
                   ).tap(onTap: passwordVisibility),
@@ -107,7 +107,7 @@ class _ChangePasswordViewState extends ConsumerState<ChangePasswordView> {
                       height: 50.h,
                       child: const Center(
                           child: CircularProgressIndicator(
-                        color: Pallete.redColor,
+                        color: Palette.redColor,
                       )),
                     )
                   : BButton(

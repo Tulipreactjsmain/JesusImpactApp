@@ -14,4 +14,5 @@ abstract class AppUrls {
 
   //! blogs
   static const String getBlogs = '$_baseUrl/blogs/';
+  static const String createBlogs = '$_baseUrl/blogs/';
 }

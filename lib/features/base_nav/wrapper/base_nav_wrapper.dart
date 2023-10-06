@@ -16,7 +16,7 @@ class BaseNavWrapper extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     int indexFromController = ref.watch(baseNavControllerProvider);
     return Scaffold(
-      backgroundColor: Pallete.bgGreyFB,
+      backgroundColor: Palette.bgGreyFB,
       drawer: const NavDrawer(),
       // pages
       body: Stack(
@@ -45,10 +45,10 @@ class BaseNavWrapper extends ConsumerWidget {
           20.sbH,
           CircleAvatar(
             radius: 30.h,
-            backgroundColor: Pallete.redColor,
+            backgroundColor: Palette.redColor,
             child: const Icon(
               PhosphorIcons.usersFill,
-              color: Pallete.whiteColor,
+              color: Palette.whiteColor,
             ),
           ).tap(
             onTap: () => moveToPage(
@@ -67,7 +67,7 @@ class BaseNavWrapper extends ConsumerWidget {
         child: Container(
           padding: EdgeInsets.only(top: 26.h, left: 32.w, right: 32.w),
           decoration: BoxDecoration(
-            color: Pallete.greyPinkF2,
+            color: Palette.greyPinkF2,
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(45.r),
               topRight: Radius.circular(45.r),

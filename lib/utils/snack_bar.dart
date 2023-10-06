@@ -15,7 +15,7 @@ void showSnackBar({required BuildContext context, required String text}) {
         duration: const Duration(milliseconds: 2000),
         content: text.txt16(
           fontWeight: FontWeight.w500,
-          color: Pallete.whiteColor,
+          color: Palette.whiteColor,
         ),
       ),
     );
@@ -46,7 +46,7 @@ showBanner({
           ? Colors.red.shade400
           : theType == NotificationType.success
               ? Colors.green.shade400
-              : Pallete.brownColor,
+              : Palette.brownColor,
 
       //! THE CONTENT
       content: Text(
@@ -54,7 +54,7 @@ showBanner({
         style: TextStyle(
           fontSize: 14.sp,
           fontWeight: FontWeight.w500,
-          color: Pallete.whiteColor,
+          color: Palette.whiteColor,
         ),
       ),
 
@@ -79,7 +79,7 @@ showBanner({
               style: TextStyle(
                   fontSize: 12.sp,
                   fontWeight: FontWeight.w500,
-                  color: Pallete.whiteColor),
+                  color: Palette.whiteColor),
             ),
           ),
         ),

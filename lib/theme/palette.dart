@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Pallete {
+class Palette {
   //! specific
   static const textBlack54 = Color(0xff545454);
   static const textGrey78 = Color(0xFF787878);

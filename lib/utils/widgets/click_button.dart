@@ -5,7 +5,7 @@
 // import 'package:flutter_riverpod/flutter_riverpod.dart';
 // import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-// import 'package:popup/theme/palette.dart';
+// import 'package:popup/theme/Palette.dart';
 
 // class ClickButton extends ConsumerStatefulWidget {
 //   final void Function()? onTap;

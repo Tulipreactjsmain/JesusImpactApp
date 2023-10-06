@@ -4,7 +4,7 @@
 // import 'package:flutter_svg/svg.dart';
 // import 'package:hidden_drawer_menu/hidden_drawer_menu.dart';
 // import 'package:phosphor_flutter/phosphor_flutter.dart';
-// import 'package:stark/theme/palette.dart';
+// import 'package:stark/theme/Palette.dart';
 // import 'package:stark/utils/string_extensions.dart';
 // import 'package:stark/utils/widget_extensions.dart';
 
@@ -22,7 +22,7 @@
 //     final user = ref.watch(userProvider)!;
 //     return AppBar(
 //       backgroundColor: Colors.transparent,
-//       foregroundColor: Pallete.blackish,
+//       foregroundColor: Palette.blackish,
 //       elevation: 0,
 //       leading: InkWell(
 //         onTap: () {
@@ -37,7 +37,7 @@
 //       title: Text(
 //         title ?? '',
 //         style: TextStyle(
-//           color: Pallete.blackish,
+//           color: Palette.blackish,
 //           fontSize: 22.sp,
 //           fontWeight: FontWeight.bold
 //         ),

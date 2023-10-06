@@ -31,7 +31,7 @@ class MyApp extends ConsumerWidget {
             debugShowCheckedModeBanner: false,
             title: 'Jesus Impact',
             theme: ThemeData(
-              colorScheme: ColorScheme.fromSeed(seedColor: Pallete.redColor),
+              colorScheme: ColorScheme.fromSeed(seedColor: Palette.redColor),
               useMaterial3: true,
             ),
             home: const ChooseAuthRouteView(),

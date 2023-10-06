@@ -32,7 +32,7 @@ class _SettingsViewState extends ConsumerState<SettingsView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Pallete.bgGreyFB,
+      backgroundColor: Palette.bgGreyFB,
       appBar: customAppBar('', context: context),
       body: Padding(
         padding: 32.padH,
@@ -75,7 +75,7 @@ class _SettingsViewState extends ConsumerState<SettingsView> {
             //       notif.sync(
             //         builder: (context, value, child) => Switch.adaptive(
             //           value: notif.value,
-            //           activeColor: Pallete.redColor,
+            //           activeColor: Palette.redColor,
             //           onChanged: (value) {
             //             notif.value = value;
             //           },
@@ -111,7 +111,7 @@ class _SettingsViewState extends ConsumerState<SettingsView> {
             //       appNotif.sync(
             //         builder: (context, value, child) => Switch.adaptive(
             //           value: appNotif.value,
-            //           activeColor: Pallete.redColor,
+            //           activeColor: Palette.redColor,
             //           onChanged: (value) {
             //             appNotif.value = value;
             //           },

@@ -52,7 +52,7 @@ class ImageOverLay extends ConsumerWidget {
                     },
                     icon: Icon(
                       PhosphorIcons.x,
-                      color: Pallete.whiteColor,
+                      color: Palette.whiteColor,
                       size: 35.sp,
                     ),
                   ).fadeIn(delay: 200.ms).alignCenterLeft(),

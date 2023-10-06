@@ -36,7 +36,7 @@ class _ForgotPasswordViewState extends ConsumerState<ForgotPasswordView> {
             elevation: 0,
             surfaceTintColor: Colors.transparent,
             backgroundColor: Colors.transparent,
-            foregroundColor: Pallete.textBlack54,
+            foregroundColor: Palette.textBlack54,
           ),
           body: SizedBox(
             height: height(context),

@@ -26,7 +26,7 @@ class NavDrawer extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     UserModel user = ref.watch(userProvider)!;
     return Drawer(
-      backgroundColor: Pallete.whiteColor,
+      backgroundColor: Palette.whiteColor,
       width: 350.w,
       child: Column(
         children: [
@@ -94,7 +94,7 @@ class NavDrawer extends ConsumerWidget {
                   leading: Icon(
                     sideNavItems1[index].icon,
                     size: 23.sp,
-                    color: Pallete.greyA7,
+                    color: Palette.greyA7,
                   ),
                   title: sideNavItems1[index].title.txt(
                         size: 16.sp,
@@ -139,14 +139,14 @@ class NavDrawer extends ConsumerWidget {
                     sideNavItems2[index].icon,
                     size: 23.sp,
                     color: sideNavItems2[index].title == 'Log out'
-                        ? Pallete.redColor
-                        : Pallete.greyA7,
+                        ? Palette.redColor
+                        : Palette.greyA7,
                   ),
                   title: sideNavItems2[index].title.txt(
                         size: 16.sp,
                         color: sideNavItems2[index].title == 'Log out'
-                            ? Pallete.redColor
-                            : Pallete.textBlack54,
+                            ? Palette.redColor
+                            : Palette.textBlack54,
                       ),
                 ),
               ),

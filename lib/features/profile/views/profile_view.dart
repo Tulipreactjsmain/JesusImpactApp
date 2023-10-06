@@ -42,7 +42,7 @@ class _ProfileViewState extends ConsumerState<ProfileView>
                     height: 115.h,
                     width: 115.w,
                     decoration: BoxDecoration(
-                      color: Pallete.redColor.withOpacity(0.5),
+                      color: Palette.redColor.withOpacity(0.5),
                       borderRadius: BorderRadius.circular(25.r),
                     ),
                   ),
@@ -56,7 +56,7 @@ class _ProfileViewState extends ConsumerState<ProfileView>
                   ),
                   4.sbH,
                   '${user.firstName} ${user.lastName}'.txt14(
-                    color: Pallete.greyA7,
+                    color: Palette.greyA7,
                   ),
                   16.sbH,
 
@@ -66,7 +66,7 @@ class _ProfileViewState extends ConsumerState<ProfileView>
                     child:
                         'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy elitr'
                             .txt14(
-                      color: Pallete.greyA7,
+                      color: Palette.greyA7,
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -82,7 +82,7 @@ class _ProfileViewState extends ConsumerState<ProfileView>
                     radius: 5.r,
                     text: 'Edit Profile',
                     fontWeight: FontWeight.w400,
-                    color: Pallete.greyC9,
+                    color: Palette.greyC9,
                   ),
                   63.sbH,
 
@@ -91,7 +91,7 @@ class _ProfileViewState extends ConsumerState<ProfileView>
                     width: 280.w,
                     decoration: BoxDecoration(
                       shape: BoxShape.rectangle,
-                      color: Pallete.whiteColor,
+                      color: Palette.whiteColor,
                       borderRadius: BorderRadius.circular(10.r),
                       boxShadow: [
                         BoxShadow(
@@ -107,11 +107,11 @@ class _ProfileViewState extends ConsumerState<ProfileView>
                       controller: tabController,
                       dividerColor: Colors.transparent,
                       indicator: BoxDecoration(
-                        color: Pallete.redColor,
+                        color: Palette.redColor,
                         borderRadius: BorderRadius.circular(10.r),
                       ),
-                      labelColor: Pallete.whiteColor,
-                      unselectedLabelColor: Pallete.greyA7,
+                      labelColor: Palette.whiteColor,
+                      unselectedLabelColor: Palette.greyA7,
                       labelStyle: TextStyle(
                         fontSize: 17.sp,
                       ),
@@ -160,7 +160,7 @@ class _ProfileViewState extends ConsumerState<ProfileView>
                                     bottom: 21.5.h,
                                   ),
                                   decoration: BoxDecoration(
-                                    color: Pallete.whiteColor,
+                                    color: Palette.whiteColor,
                                     borderRadius: BorderRadius.circular(15.r),
                                   ),
                                   child: Column(
@@ -189,7 +189,7 @@ class _ProfileViewState extends ConsumerState<ProfileView>
                                               //! username
                                               '@username'.txt(
                                                 size: 12.sp,
-                                                color: Pallete.greyA7,
+                                                color: Palette.greyA7,
                                               ),
                                             ],
                                           ),
@@ -197,7 +197,7 @@ class _ProfileViewState extends ConsumerState<ProfileView>
                                           Icon(
                                             Icons.more_vert,
                                             size: 24.sp,
-                                            color: Pallete.greyA7,
+                                            color: Palette.greyA7,
                                           ),
                                         ],
                                       ),
@@ -225,17 +225,17 @@ class _ProfileViewState extends ConsumerState<ProfileView>
                                         children: [
                                           const Icon(
                                             PhosphorIcons.heartFill,
-                                            color: Pallete.greyA7,
+                                            color: Palette.greyA7,
                                           ),
                                           20.6.sbW,
                                           const Icon(
                                             PhosphorIcons.chatCircleFill,
-                                            color: Pallete.greyA7,
+                                            color: Palette.greyA7,
                                           ),
                                           20.6.sbW,
                                           const Icon(
                                             PhosphorIcons.paperPlaneTiltFill,
-                                            color: Pallete.greyA7,
+                                            color: Palette.greyA7,
                                           ),
                                         ],
                                       ),
@@ -262,13 +262,13 @@ class _ProfileViewState extends ConsumerState<ProfileView>
                                     'Open Groups'.txt(
                                       size: 17.sp,
                                       fontWeightType: TxtFntWt.med,
-                                      color: Pallete.greyA7,
+                                      color: Palette.greyA7,
                                     ),
                                     'View All'
                                         .txt(
                                       size: 17.sp,
                                       fontWeightType: TxtFntWt.med,
-                                      color: Pallete.redColor,
+                                      color: Palette.redColor,
                                     )
                                         .tap(onTap: () {
                                       goTo(
@@ -298,7 +298,7 @@ class _ProfileViewState extends ConsumerState<ProfileView>
                                       width: 170.w,
                                       margin: EdgeInsets.only(right: 16.w),
                                       decoration: BoxDecoration(
-                                        color: Pallete.blackColor,
+                                        color: Palette.blackColor,
                                         borderRadius:
                                             BorderRadius.circular(15.r),
                                       ),
@@ -308,7 +308,7 @@ class _ProfileViewState extends ConsumerState<ProfileView>
                                             padding: EdgeInsets.all(8.0),
                                             child: Placeholder(
                                               color:
-                                                  Pallete.textInputFillGreyEE,
+                                                  Palette.textInputFillGreyEE,
                                             ),
                                           ),
                                           Container(
@@ -342,7 +342,7 @@ class _ProfileViewState extends ConsumerState<ProfileView>
                                                     'For Her'.txt16(
                                                       fontWeightType:
                                                           TxtFntWt.med,
-                                                      color: Pallete.whiteColor,
+                                                      color: Palette.whiteColor,
                                                     ),
                                                     3.sbH,
                                                     Row(
@@ -351,14 +351,14 @@ class _ProfileViewState extends ConsumerState<ProfileView>
                                                             PhosphorIcons
                                                                 .userFill,
                                                             size: 14.sp,
-                                                            color: Pallete
+                                                            color: Palette
                                                                 .whiteColor),
                                                         6.6.sbW,
                                                         '12 Members'.txt(
                                                             size: 14.sp,
                                                             fontWeight:
                                                                 FontWeight.w300,
-                                                            color: Pallete
+                                                            color: Palette
                                                                 .whiteColor),
                                                         5.sbW,
                                                       ],
@@ -372,7 +372,7 @@ class _ProfileViewState extends ConsumerState<ProfileView>
                                                       isText: false,
                                                       item: 'Join'.txt(
                                                           size: 15.sp,
-                                                          color: Pallete
+                                                          color: Palette
                                                               .whiteColor),
                                                     ),
                                                     22.sbH,
@@ -400,13 +400,13 @@ class _ProfileViewState extends ConsumerState<ProfileView>
                                     'Closed Groups'.txt(
                                       size: 17.sp,
                                       fontWeightType: TxtFntWt.med,
-                                      color: Pallete.greyA7,
+                                      color: Palette.greyA7,
                                     ),
                                     'View All'
                                         .txt(
                                       size: 17.sp,
                                       fontWeightType: TxtFntWt.med,
-                                      color: Pallete.redColor,
+                                      color: Palette.redColor,
                                     )
                                         .tap(onTap: () {
                                       goTo(
@@ -436,7 +436,7 @@ class _ProfileViewState extends ConsumerState<ProfileView>
                                       width: 170.w,
                                       margin: EdgeInsets.only(right: 16.w),
                                       decoration: BoxDecoration(
-                                        color: Pallete.blackColor,
+                                        color: Palette.blackColor,
                                         borderRadius:
                                             BorderRadius.circular(15.r),
                                       ),
@@ -446,7 +446,7 @@ class _ProfileViewState extends ConsumerState<ProfileView>
                                             padding: EdgeInsets.all(8.0),
                                             child: Placeholder(
                                               color:
-                                                  Pallete.textInputFillGreyEE,
+                                                  Palette.textInputFillGreyEE,
                                             ),
                                           ),
                                           Container(
@@ -480,7 +480,7 @@ class _ProfileViewState extends ConsumerState<ProfileView>
                                                     'For Her'.txt16(
                                                       fontWeightType:
                                                           TxtFntWt.med,
-                                                      color: Pallete.whiteColor,
+                                                      color: Palette.whiteColor,
                                                     ),
                                                     3.sbH,
                                                     Row(
@@ -489,14 +489,14 @@ class _ProfileViewState extends ConsumerState<ProfileView>
                                                             PhosphorIcons
                                                                 .userFill,
                                                             size: 14.sp,
-                                                            color: Pallete
+                                                            color: Palette
                                                                 .whiteColor),
                                                         6.6.sbW,
                                                         '12 Members'.txt(
                                                             size: 14.sp,
                                                             fontWeight:
                                                                 FontWeight.w300,
-                                                            color: Pallete
+                                                            color: Palette
                                                                 .whiteColor),
                                                         5.sbW,
                                                       ],
@@ -510,7 +510,7 @@ class _ProfileViewState extends ConsumerState<ProfileView>
                                                       isText: false,
                                                       item: 'Join'.txt(
                                                           size: 15.sp,
-                                                          color: Pallete
+                                                          color: Palette
                                                               .whiteColor),
                                                     ),
                                                     22.sbH,
@@ -550,7 +550,7 @@ class _ProfileViewState extends ConsumerState<ProfileView>
                 children: [
                   const Icon(
                     PhosphorIcons.listBold,
-                    color: Pallete.textBlack54,
+                    color: Palette.textBlack54,
                   ).tap(onTap: () {
                     Scaffold.of(context).openDrawer();
                   })

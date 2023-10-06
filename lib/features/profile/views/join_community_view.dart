@@ -77,8 +77,8 @@ class _JoinCommunityViewState extends ConsumerState<JoinCommunityView> {
                               decoration: BoxDecoration(
                                 color: switch (selectedComms.value
                                     .contains(communities[index])) {
-                                  true => Pallete.redColor,
-                                  false => Pallete.boxGrey,
+                                  true => Palette.redColor,
+                                  false => Palette.boxGrey,
                                 },
                                 borderRadius: BorderRadius.circular(12.r),
                               ),
@@ -90,7 +90,7 @@ class _JoinCommunityViewState extends ConsumerState<JoinCommunityView> {
                                   //   height: 16.6.h,
                                   //   color: switch (selectedComms.value
                                   //       .contains(communities[index])) {
-                                  //     true => Pallete.whiteColor,
+                                  //     true => Palette.whiteColor,
                                   //     false => null,
                                   //   },
                                   // ),
@@ -98,8 +98,8 @@ class _JoinCommunityViewState extends ConsumerState<JoinCommunityView> {
                                   communities[index].toCapitalized().txt16(
                                         color: switch (selectedComms.value
                                             .contains(communities[index])) {
-                                          true => Pallete.whiteColor,
-                                          false => Pallete.textBlack54,
+                                          true => Palette.whiteColor,
+                                          false => Palette.textBlack54,
                                         },
                                       )
                                 ],

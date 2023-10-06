@@ -50,7 +50,7 @@ class BButton extends StatelessWidget {
           padding: EdgeInsets.zero,
           elevation: 0,
           shadowColor: Colors.transparent,
-          backgroundColor: color ?? Pallete.redColor,
+          backgroundColor: color ?? Palette.redColor,
         ),
         child: Center(
           child: isText == true
@@ -59,7 +59,7 @@ class BButton extends StatelessWidget {
                     textStyle: TextStyle(
                       fontSize: fontSize ?? 18.sp,
                       fontWeight: fontWeight ?? FontWeight.w500,
-                      color: textColor ?? Pallete.whiteColor,
+                      color: textColor ?? Palette.whiteColor,
                     ),
                   ))
               : item,
@@ -112,7 +112,7 @@ class ArrowButton extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 21.w),
           elevation: 0,
           shadowColor: Colors.transparent,
-          backgroundColor: color ?? Pallete.redColor,
+          backgroundColor: color ?? Palette.redColor,
         ),
         child: Center(
           child: Row(
@@ -124,13 +124,13 @@ class ArrowButton extends StatelessWidget {
                   textStyle: TextStyle(
                     fontSize: fontSize ?? 18.sp,
                     fontWeight: fontWeight ?? FontWeight.w500,
-                    color: textColor ?? Pallete.whiteColor,
+                    color: textColor ?? Palette.whiteColor,
                   ),
                 ),
               ),
               Icon(
                 Icons.arrow_forward_rounded,
-                color: Pallete.whiteColor,
+                color: Palette.whiteColor,
                 size: 24.sp,
               ),
             ],
@@ -181,7 +181,7 @@ class TransparentButton extends ConsumerWidget {
           shape: RoundedRectangleBorder(
             side: BorderSide(
               width: 1.5,
-              color: color ?? Pallete.redColor,
+              color: color ?? Palette.redColor,
             ),
             borderRadius: BorderRadius.all(
               Radius.circular(radius ?? 12.r),
@@ -199,7 +199,7 @@ class TransparentButton extends ConsumerWidget {
                     textStyle: TextStyle(
                       fontSize: fontSize ?? 18.sp,
                       fontWeight: fontWeight,
-                      color: textColor ?? Pallete.redColor,
+                      color: textColor ?? Palette.redColor,
                     ),
                   ))
               : item,

@@ -22,8 +22,8 @@ class InterestSelectionTile extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 27.w, vertical: 12.h),
       decoration: BoxDecoration(
         color: switch (selectedInterests.value.contains(interest)) {
-          true => Pallete.redColor,
-          false => Pallete.boxGrey,
+          true => Palette.redColor,
+          false => Palette.boxGrey,
         },
         borderRadius: BorderRadius.circular(12.r),
       ),
@@ -34,15 +34,15 @@ class InterestSelectionTile extends StatelessWidget {
             icon: interest,
             height: 16.6.h,
             color: switch (selectedInterests.value.contains(interest)) {
-              true => Pallete.whiteColor,
+              true => Palette.whiteColor,
               false => null,
             },
           ),
           11.5.sbW,
           interest.toCapitalized().txt16(
                 color: switch (selectedInterests.value.contains(interest)) {
-                  true => Pallete.whiteColor,
-                  false => Pallete.textBlack54,
+                  true => Palette.whiteColor,
+                  false => Palette.textBlack54,
                 },
               )
         ],

@@ -11,7 +11,7 @@ class PrivacyPolicyView extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      backgroundColor: Pallete.bgGreyFB,
+      backgroundColor: Palette.bgGreyFB,
       appBar: customAppBar('', context: context),
       body: SingleChildScrollView(
         child: Padding(

@@ -1,15 +1,15 @@
 // import 'package:antena/shared/app_texts.dart';
-// import 'package:antena/theme/palette.dart';
+// import 'package:antena/theme/Palette.dart';
 // import 'package:flutter/material.dart';
 
 // //! car condtion
 // enum CarCondition {
-//   excellent(AppTexts.excellent, Pallete.grnn, AppTexts.excellentDescription),
+//   excellent(AppTexts.excellent, Palette.grnn, AppTexts.excellentDescription),
 //   veryGood(
-//       AppTexts.veryGood, Pallete.carVeryGood, AppTexts.veryGoodDescription),
-//   good(AppTexts.good, Pallete.carGood, AppTexts.goodDescription),
-//   fair(AppTexts.fair, Pallete.carFair, AppTexts.fairDescription),
-//   poor(AppTexts.poor, Pallete.blackColor, AppTexts.poorDescription);
+//       AppTexts.veryGood, Palette.carVeryGood, AppTexts.veryGoodDescription),
+//   good(AppTexts.good, Palette.carGood, AppTexts.goodDescription),
+//   fair(AppTexts.fair, Palette.carFair, AppTexts.fairDescription),
+//   poor(AppTexts.poor, Palette.blackColor, AppTexts.poorDescription);
 
 //   const CarCondition(this.condition, this.color, this.description);
 //   final String condition;
@@ -27,22 +27,22 @@
 
 // //! driving routine
 // enum DrivingRoutine {
-//   cityDriving(AppTexts.cityDriving, Pallete.cityDrivingRed,
+//   cityDriving(AppTexts.cityDriving, Palette.cityDrivingRed,
 //       AppTexts.cityDrivingDescription),
-//   highway(AppTexts.highway, Pallete.highwayBlue, AppTexts.highwayDescription),
+//   highway(AppTexts.highway, Palette.highwayBlue, AppTexts.highwayDescription),
 //   commuting(
-//       AppTexts.commuting, Pallete.commutingGrey, AppTexts.commutingDescription),
+//       AppTexts.commuting, Palette.commutingGrey, AppTexts.commutingDescription),
 //   longDistanceTravel(AppTexts.longDistanceTravel,
-//       Pallete.longDistanceTravelGreen, AppTexts.longDistanceTravelDescription),
-//   dailyShortTrips(AppTexts.dailyShortTrips, Pallete.dailyShortTripsYellow,
+//       Palette.longDistanceTravelGreen, AppTexts.longDistanceTravelDescription),
+//   dailyShortTrips(AppTexts.dailyShortTrips, Palette.dailyShortTripsYellow,
 //       AppTexts.dailyShortTripsDescription),
 //   businessProfessionalUse(
 //       AppTexts.businessProfessionalUse,
-//       Pallete.businessProfessionalGrey,
+//       Palette.businessProfessionalGrey,
 //       AppTexts.businessProfessionalUseDescreiption),
-//   weekendLeisure(AppTexts.weekendLeisure, Pallete.weekendLeisurePink,
+//   weekendLeisure(AppTexts.weekendLeisure, Palette.weekendLeisurePink,
 //       AppTexts.weekendLeisureDescription),
-//   st(AppTexts.weekendLeisure, Pallete.weekendLeisurePink,
+//   st(AppTexts.weekendLeisure, Palette.weekendLeisurePink,
 //       AppTexts.weekendLeisureDescription);
 
 //   const DrivingRoutine(this.routine, this.color, this.description);

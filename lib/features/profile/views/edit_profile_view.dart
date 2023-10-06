@@ -155,7 +155,7 @@ class _EditProfileViewState extends ConsumerState<EditProfileView> {
                 //         icon: 'showpassword',
                 //         height: 15.h,
                 //         color: isPasswordInvisible.value == false
-                //             ? Pallete.redColor
+                //             ? Palette.redColor
                 //             : null,
                 //       ),
                 //     ).tap(onTap: passwordVisibility),
@@ -168,7 +168,7 @@ class _EditProfileViewState extends ConsumerState<EditProfileView> {
                         height: 50.h,
                         child: const Center(
                             child: CircularProgressIndicator(
-                          color: Pallete.redColor,
+                          color: Palette.redColor,
                         )),
                       )
                     : BButton(
@@ -213,7 +213,7 @@ class _EditProfileViewState extends ConsumerState<EditProfileView> {
   Widget bottomSheet() {
     return Container(
         decoration: BoxDecoration(
-            color: Pallete.whiteColor,
+            color: Palette.whiteColor,
             borderRadius: BorderRadius.vertical(top: Radius.circular(15.r))),
         height: 150.h,
         width: double.infinity,
@@ -224,7 +224,7 @@ class _EditProfileViewState extends ConsumerState<EditProfileView> {
           //! NOTICE
           Text('Choose profile photo',
               style: TextStyle(
-                  color: Pallete.blackColor,
+                  color: Palette.blackColor,
                   fontSize: 24.sp,
                   fontWeight: FontWeight.w700)),
 
@@ -241,7 +241,7 @@ class _EditProfileViewState extends ConsumerState<EditProfileView> {
                 },
                 icon: Icon(
                   Icons.camera_alt,
-                  color: Pallete.redColor,
+                  color: Palette.redColor,
                   size: 40.sp,
                 )),
 
@@ -253,7 +253,7 @@ class _EditProfileViewState extends ConsumerState<EditProfileView> {
                 },
                 icon: Icon(
                   Icons.photo,
-                  color: Pallete.redColor,
+                  color: Palette.redColor,
                   size: 40.sp,
                 ))
           ])

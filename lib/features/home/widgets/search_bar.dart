@@ -24,7 +24,7 @@ class _SearchBarrState extends ConsumerState<SearchBarr> {
         padding: EdgeInsets.only(right: 18.w),
         child: Icon(
           PhosphorIcons.magnifyingGlassBold,
-          color: Pallete.greyA7,
+          color: Palette.greyA7,
           size: 24.sp,
         ),
       ),

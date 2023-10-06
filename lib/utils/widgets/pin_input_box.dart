@@ -26,12 +26,12 @@ class PinInputBox extends StatelessWidget {
         height: 49.h,
         textStyle: TextStyle(
           fontSize: 16.sp,
-          color: Pallete.blackColor,
+          color: Palette.blackColor,
           fontWeight: FontWeight.w700,
         ),
         decoration: BoxDecoration(
           border: Border.all(color: Colors.transparent),
-          color: Pallete.pinGrey,
+          color: Palette.pinGrey,
           borderRadius: BorderRadius.circular(4.r),
         ),
       ),
@@ -40,12 +40,12 @@ class PinInputBox extends StatelessWidget {
         height: 49.h,
         textStyle: TextStyle(
           fontSize: 16.sp,
-          color: Pallete.blackColor,
+          color: Palette.blackColor,
           fontWeight: FontWeight.w700,
         ),
         decoration: BoxDecoration(
-          border: Border.all(color: Pallete.greyColor),
-          color: Pallete.whiteColor,
+          border: Border.all(color: Palette.greyColor),
+          color: Palette.whiteColor,
           borderRadius: BorderRadius.circular(4.r),
         ),
       ),
@@ -54,12 +54,12 @@ class PinInputBox extends StatelessWidget {
         height: 49.h,
         textStyle: TextStyle(
           fontSize: 16.sp,
-          color: Pallete.blackColor,
+          color: Palette.blackColor,
           fontWeight: FontWeight.w700,
         ),
         decoration: BoxDecoration(
           border: Border.all(color: Colors.transparent),
-          color: Pallete.pinGrey,
+          color: Palette.pinGrey,
           borderRadius: BorderRadius.circular(4.r),
         ),
       ),

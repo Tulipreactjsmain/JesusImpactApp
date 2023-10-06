@@ -18,8 +18,8 @@ AppBar customAppBar(String title,
     required BuildContext context}) {
   return AppBar(
       surfaceTintColor: Colors.transparent,
-      foregroundColor: foregroundColor ?? Pallete.textBlack54,
-      backgroundColor: color ?? Pallete.whiteColor,
+      foregroundColor: foregroundColor ?? Palette.textBlack54,
+      backgroundColor: color ?? Palette.whiteColor,
       leading: isLeftAligned
           ? null
           : showBackButton
@@ -29,10 +29,10 @@ AppBar customAppBar(String title,
                           onPressed: () => goBack(context),
                           icon: Icon(
                             Icons.close,
-                            color: iconColor ?? Pallete.textBlack54,
+                            color: iconColor ?? Palette.textBlack54,
                           ))
                       : BackButton(
-                          color: iconColor ?? Pallete.textBlack54,
+                          color: iconColor ?? Palette.textBlack54,
                           onPressed: () => backFunction!(),
                         )
                   : showXIcon
@@ -40,9 +40,9 @@ AppBar customAppBar(String title,
                           onPressed: () => goBack(context),
                           icon: Icon(
                             Icons.close,
-                            color: iconColor ?? Pallete.textBlack54,
+                            color: iconColor ?? Palette.textBlack54,
                           ))
-                      : BackButton(color: iconColor ?? Pallete.textBlack54)
+                      : BackButton(color: iconColor ?? Palette.textBlack54)
               : null,
       elevation: 0,
       centerTitle: !isLeftAligned,
@@ -52,7 +52,7 @@ AppBar customAppBar(String title,
         style: GoogleFonts.poppins(
           textStyle: TextStyle(
             fontSize: 22.sp,
-            color: Pallete.textGrey41,
+            color: Palette.textGrey41,
           ),
         ),
       ),

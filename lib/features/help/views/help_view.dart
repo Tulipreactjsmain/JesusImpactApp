@@ -15,7 +15,7 @@ class HelpView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Pallete.bgGreyFB,
+      backgroundColor: Palette.bgGreyFB,
       appBar: customAppBar('', context: context),
       body: Padding(
         padding: 32.padH,

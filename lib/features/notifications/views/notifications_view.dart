@@ -40,7 +40,7 @@ class NotificationsView extends ConsumerWidget {
                             children: [
                               'Tony Stark'.txt16(
                                   fontWeightType: TxtFntWt.bold,
-                                  color: Pallete.redColor),
+                                  color: Palette.redColor),
                               ' followed you'.txt16(
                                 fontWeightType: TxtFntWt.sBold,
                                 colorType: TxtClrType.g54,
@@ -80,7 +80,7 @@ class NotificationsView extends ConsumerWidget {
                 'Clear'.txt(
                   size: 17.sp,
                   fontWeightType: TxtFntWt.med,
-                  color: Pallete.greyA7,
+                  color: Palette.greyA7,
                 ),
               ],
             ),

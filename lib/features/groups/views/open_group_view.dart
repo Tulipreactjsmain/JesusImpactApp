@@ -59,7 +59,7 @@ class OpenGroupsView extends ConsumerWidget {
                   itemBuilder: (context, index) {
                     return Container(
                       decoration: BoxDecoration(
-                        color: Pallete.blackColor,
+                        color: Palette.blackColor,
                         borderRadius: BorderRadius.circular(15.r),
                       ),
                       child: Stack(
@@ -67,7 +67,7 @@ class OpenGroupsView extends ConsumerWidget {
                           const Padding(
                             padding: EdgeInsets.all(8.0),
                             child: Placeholder(
-                              color: Pallete.textInputFillGreyEE,
+                              color: Palette.textInputFillGreyEE,
                             ),
                           ),
                           Container(
@@ -97,19 +97,19 @@ class OpenGroupsView extends ConsumerWidget {
                                   children: [
                                     'For Her'.txt16(
                                       fontWeightType: TxtFntWt.med,
-                                      color: Pallete.whiteColor,
+                                      color: Palette.whiteColor,
                                     ),
                                     3.sbH,
                                     Row(
                                       children: [
                                         Icon(PhosphorIcons.userFill,
                                             size: 14.sp,
-                                            color: Pallete.whiteColor),
+                                            color: Palette.whiteColor),
                                         6.6.sbW,
                                         '12 Members'.txt(
                                             size: 14.sp,
                                             fontWeight: FontWeight.w300,
-                                            color: Pallete.whiteColor),
+                                            color: Palette.whiteColor),
                                         5.sbW,
                                       ],
                                     ),
@@ -122,7 +122,7 @@ class OpenGroupsView extends ConsumerWidget {
                                       isText: false,
                                       item: 'Join'.txt(
                                           size: 15.sp,
-                                          color: Pallete.whiteColor),
+                                          color: Palette.whiteColor),
                                     ),
                                     22.sbH,
                                   ],

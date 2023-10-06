@@ -27,7 +27,7 @@ class _ContactUsViewState extends ConsumerState<ContactUsView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Pallete.bgGreyFB,
+      backgroundColor: Palette.bgGreyFB,
       appBar: customAppBar('', context: context),
       body: SingleChildScrollView(
         child: Padding(
@@ -49,7 +49,7 @@ class _ContactUsViewState extends ConsumerState<ContactUsView> {
               //! select topic
               BButton(
                 onTap: () {},
-                color: Pallete.textInputFillGreyEE,
+                color: Palette.textInputFillGreyEE,
                 isText: false,
                 item: Padding(
                   padding: 20.padH,
@@ -60,7 +60,7 @@ class _ContactUsViewState extends ConsumerState<ContactUsView> {
                           .txt(size: 20.sp, colorType: TxtClrType.g54),
                       Icon(
                         Icons.keyboard_arrow_down,
-                        color: Pallete.textBlack54,
+                        color: Palette.textBlack54,
                         size: 32.sp,
                       )
                     ],
